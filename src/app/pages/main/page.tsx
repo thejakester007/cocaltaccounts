@@ -14,7 +14,7 @@ export default function MainDashboard() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
         </div>
-        <Link href="/accounts" className="text-sm text-emerald-400 hover:underline">
+        <Link href="/pages/accounts" className="text-sm text-emerald-400 hover:underline">
           Manage accounts →
         </Link>
       </header>
