@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "schema": "spell_factory@1",
+  "levels": [
+    { "level": 1, "hitpoints": 425, "spellsUnlocked": ["Lightning Spell"],                 "storageCapacity": 2,  "buildCostElixir": 150000,   "buildTime": "6h",  "expGained": 146, "thRequired": 5 },
+    { "level": 2, "hitpoints": 470, "spellsUnlocked": ["Healing Spell"],                   "storageCapacity": 4,  "buildCostElixir": 300000,   "buildTime": "12h", "expGained": 207, "thRequired": 6 },
+    { "level": 3, "hitpoints": 520, "spellsUnlocked": ["Rage Spell"],                      "storageCapacity": 6,  "buildCostElixir": 600000,   "buildTime": "1d",  "expGained": 293, "thRequired": 7 },
+    { "level": 4, "hitpoints": 600, "spellsUnlocked": ["Jump Spell", "Freeze Spell"],      "storageCapacity": 8,  "buildCostElixir": 1200000,  "buildTime": "2d",  "expGained": 415, "thRequired": 9 },
+    { "level": 5, "hitpoints": 720, "spellsUnlocked": ["Clone Spell"],                     "storageCapacity": 10, "buildCostElixir": 2000000,  "buildTime": "3d",  "expGained": 509, "thRequired": 10 },
+    { "level": 6, "hitpoints": 840, "spellsUnlocked": ["Invisibility Spell"],              "storageCapacity": 10, "buildCostElixir": 3500000,  "buildTime": "5d",  "expGained": 657, "thRequired": 11 },
+    { "level": 7, "hitpoints": 960, "spellsUnlocked": ["Recall Spell"],                    "storageCapacity": 10, "buildCostElixir": 9000000,  "buildTime": "7d",  "expGained": 777, "thRequired": 13 },
+    { "level": 8, "hitpoints": 1080,"spellsUnlocked": ["Revive Spell"],                    "storageCapacity": 10, "buildCostElixir": 14000000, "buildTime": "8d",  "expGained": 831, "thRequired": 15 }
+  ]
+}

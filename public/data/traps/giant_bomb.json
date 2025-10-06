@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "schema": "giant_bomb@1",
+  "levels": [
+    { "level": 1,  "damage": 175, "damageRadiusTiles": 3,   "buildCostGold": 12500,     "buildTime": null,  "expGained": null, "thRequired": 6  },
+    { "level": 2,  "damage": 200, "damageRadiusTiles": 3.5, "buildCostGold": 75000,     "buildTime": "1h",  "expGained": 60,   "thRequired": 6  },
+    { "level": 3,  "damage": 225, "damageRadiusTiles": 3.5, "buildCostGold": 220000,    "buildTime": "3h",  "expGained": 103,  "thRequired": 8  },
+    { "level": 4,  "damage": 250, "damageRadiusTiles": 4,   "buildCostGold": 750000,    "buildTime": "8h",  "expGained": 169,  "thRequired": 10 },
+    { "level": 5,  "damage": 275, "damageRadiusTiles": 4,   "buildCostGold": 900000,    "buildTime": "10h", "expGained": 189,  "thRequired": 11 },
+    { "level": 6,  "damage": 325, "damageRadiusTiles": 4,   "buildCostGold": 1300000,   "buildTime": "11h", "expGained": 198,  "thRequired": 13 },
+    { "level": 7,  "damage": 375, "damageRadiusTiles": 4,   "buildCostGold": 1500000,   "buildTime": "12h", "expGained": 207,  "thRequired": 13 },
+    { "level": 8,  "damage": 400, "damageRadiusTiles": 4,   "buildCostGold": 2500000,   "buildTime": "2d",  "expGained": 415,  "thRequired": 14 },
+    { "level": 9,  "damage": 425, "damageRadiusTiles": 4,   "buildCostGold": 4000000,   "buildTime": "3d",  "expGained": 509,  "thRequired": 15 },
+    { "level": 10, "damage": 450, "damageRadiusTiles": 4,   "buildCostGold": 5500000,   "buildTime": "4d",  "expGained": 587,  "thRequired": 16 },
+    { "level": 11, "damage": 475, "damageRadiusTiles": 4,   "buildCostGold": 12000000,  "buildTime": "9d",  "expGained": 881,  "thRequired": 17 }
+  ]
+}

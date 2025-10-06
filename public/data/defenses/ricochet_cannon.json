@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "schema": "ricochet_cannon@1",
+  "levels": [
+    { "level": 1, "damagePerSecond": 360, "damagePerShot": 288,   "hitpoints": 5400, "buildCostGold": 12000000, "buildTime": "9d",       "expGained": 881,  "thRequired": 16 },
+    { "level": 2, "damagePerSecond": 390, "damagePerShot": 312,   "hitpoints": 5700, "buildCostGold": 13000000, "buildTime": "10d",      "expGained": 929,  "thRequired": 16 },
+    { "level": 3, "damagePerSecond": 405, "damagePerShot": 324,   "hitpoints": 6000, "buildCostGold": 23000000, "buildTime": "15d 12h",  "expGained": 1157, "thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "damagePerSecond": 413, "damagePerShot": 330.4, "hitpoints": 6000, "buildCostGold": 11500000, "buildTime": "5d 12h",  "expGained": 689,  "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 413, "damagePerShot": 330.4, "hitpoints": 6150, "buildCostGold": 8000000,  "buildTime": "6d 12h",  "expGained": 749,  "thRequired": 17 }
+  ]
+}

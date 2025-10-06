@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "schema": "dark_spell_factory@1",
+  "levels": [
+    { "level": 1, "hitpoints": 600,  "spellsUnlocked": ["Poison Spell"],     "storageCapacity": 1, "buildCostElixir": 130000,   "buildTime": "6h",  "expGained": 146, "thRequired": 8  },
+    { "level": 2, "hitpoints": 660,  "spellsUnlocked": ["Earthquake Spell"], "storageCapacity": 1, "buildCostElixir": 260000,   "buildTime": "12h", "expGained": 207, "thRequired": 8  },
+    { "level": 3, "hitpoints": 720,  "spellsUnlocked": ["Haste Spell"],      "storageCapacity": 1, "buildCostElixir": 600000,   "buildTime": "2d",  "expGained": 415, "thRequired": 9  },
+    { "level": 4, "hitpoints": 780,  "spellsUnlocked": ["Skeleton Spell"],   "storageCapacity": 1, "buildCostElixir": 1200000,  "buildTime": "4d",  "expGained": 587, "thRequired": 9  },
+    { "level": 5, "hitpoints": 840,  "spellsUnlocked": ["Bat Spell"],        "storageCapacity": 1, "buildCostElixir": 2500000,  "buildTime": "5d",  "expGained": 657, "thRequired": 10 },
+    { "level": 6, "hitpoints": 950,  "spellsUnlocked": ["Overgrowth Spell"], "storageCapacity": 1, "buildCostElixir": 4000000,  "buildTime": "6d",  "expGained": 720, "thRequired": 12 },
+    { "level": 7, "hitpoints": 1010, "spellsUnlocked": ["Ice Block Spell"],  "storageCapacity": 1, "buildCostElixir": 12000000, "buildTime": "8d",  "expGained": 831, "thRequired": 14 }
+  ]
+}

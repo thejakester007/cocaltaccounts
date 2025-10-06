@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "schema": "monolith@1",
+  "levels": [
+    { "level": 1, "baseDamagePerSecond": 150, "baseDamagePerShot": 225,   "bonusDamagePerShotPct": 0.11, "hitpoints": 4747, "buildCostDarkElixir": 200000, "buildTime": "7d",       "expGained": 777, "thRequired": 15 },
+    { "level": 2, "baseDamagePerSecond": 175, "baseDamagePerShot": 262.5, "bonusDamagePerShotPct": 0.12, "hitpoints": 5050, "buildCostDarkElixir": 250000, "buildTime": "8d",       "expGained": 831, "thRequired": 15 },
+    { "level": 3, "baseDamagePerSecond": 193, "baseDamagePerShot": 289.5, "bonusDamagePerShotPct": 0.13, "hitpoints": 5353, "buildCostDarkElixir": 260000, "buildTime": "9d",       "expGained": 881, "thRequired": 16 },
+    { "level": 4, "baseDamagePerSecond": 209, "baseDamagePerShot": 313.5, "bonusDamagePerShotPct": 0.14, "hitpoints": 5656, "buildCostDarkElixir": 300000, "buildTime": "15d 18h",  "expGained": 1166,"thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "baseDamagePerSecond": 219, "baseDamagePerShot": 328.5, "bonusDamagePerShotPct": 0.14, "hitpoints": 5656, "buildCostDarkElixir": 150000, "buildTime": "5d",     "expGained": 657, "thRequired": 17 },
+    { "level": 2, "baseDamagePerSecond": 219, "baseDamagePerShot": 328.5, "bonusDamagePerShotPct": 0.14, "hitpoints": 5858, "buildCostDarkElixir": 130000, "buildTime": "7d",     "expGained": 777, "thRequired": 17 }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "schema": "multi_gear_tower@1",
+  "levels": [
+    { "level": 1, "damagePerSecond": 300, "damagePerShot": 300, "hitpoints": 4000, "buildCostGold": 22500000, "buildTime": "15d", "expGained": 1138, "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 320, "damagePerShot": 320, "hitpoints": 4200, "buildCostGold": 23000000, "buildTime": "16d", "expGained": 1175, "thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "damagePerSecond": 330, "damagePerShot": 330, "hitpoints": 4200, "buildCostGold": 11500000, "buildTime": "6d", "expGained": 720, "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 330, "damagePerShot": 330, "hitpoints": 4350, "buildCostGold": 8000000,  "buildTime": "7d", "expGained": 777, "thRequired": 17 }
+  ]
+}

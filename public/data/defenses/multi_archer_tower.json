@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "schema": "multi_archer_tower@1",
+  "levels": [
+    { "level": 1, "dpsPerArcher": 120, "damagePerShot": 60,  "hitpoints": 5000, "buildCostGold": 12000000, "buildTime": "9d",       "expGained": 881,  "thRequired": 16 },
+    { "level": 2, "dpsPerArcher": 130, "damagePerShot": 65,  "hitpoints": 5200, "buildCostGold": 13000000, "buildTime": "10d",      "expGained": 929,  "thRequired": 16 },
+    { "level": 3, "dpsPerArcher": 140, "damagePerShot": 70,  "hitpoints": 5400, "buildCostGold": 23000000, "buildTime": "15d 12h",  "expGained": 1157, "thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "dpsPerArcher": 145, "damagePerShot": 72.5, "hitpoints": 5400, "buildCostGold": 11500000, "buildTime": "5d 12h",  "expGained": 689,  "thRequired": 17 },
+    { "level": 2, "dpsPerArcher": 145, "damagePerShot": 72.5, "hitpoints": 5500, "buildCostGold": 8000000,  "buildTime": "6d 12h",  "expGained": 749,  "thRequired": 17 }
+  ]
+}

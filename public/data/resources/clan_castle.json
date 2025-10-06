@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "schema": "clan_castle@1",
+  "note": "Durations use XdYhZmWs. Use null for N/A. Siege capacity is 0 when '-' in source.",
+  "levels": [
+    { "level": 1,  "hitpoints": 600,  "troopCapacity": 10, "spellCapacity": 0, "siegeMachineCapacity": 0, "labLevelCap": 5,  "buildCostElixir": 10000,     "buildTime": null,   "expGained": null, "thRequired": 2 },
+    { "level": 2,  "hitpoints": 1200, "troopCapacity": 15, "spellCapacity": 0, "siegeMachineCapacity": 0, "labLevelCap": 6,  "buildCostElixir": 50000,     "buildTime": "2h",   "expGained": 84,   "thRequired": 4 },
+    { "level": 3,  "hitpoints": 1800, "troopCapacity": 20, "spellCapacity": 0, "siegeMachineCapacity": 0, "labLevelCap": 7,  "buildCostElixir": 600000,    "buildTime": "12h",  "expGained": 207,  "thRequired": 6 },
+    { "level": 4,  "hitpoints": 2600, "troopCapacity": 25, "spellCapacity": 1, "siegeMachineCapacity": 0, "labLevelCap": 8,  "buildCostElixir": 1200000,   "buildTime": "1d",   "expGained": 293,  "thRequired": 8 },
+    { "level": 5,  "hitpoints": 3000, "troopCapacity": 30, "spellCapacity": 1, "siegeMachineCapacity": 0, "labLevelCap": 9,  "buildCostElixir": 2000000,   "buildTime": "1d12h","expGained": 360,  "thRequired": 9 },
+    { "level": 6,  "hitpoints": 3400, "troopCapacity": 35, "spellCapacity": 1, "siegeMachineCapacity": 1, "labLevelCap": 10, "buildCostElixir": 3000000,   "buildTime": "2d",   "expGained": 415,  "thRequired": 10 },
+    { "level": 7,  "hitpoints": 4000, "troopCapacity": 35, "spellCapacity": 2, "siegeMachineCapacity": 1, "labLevelCap": 11, "buildCostElixir": 5000000,   "buildTime": "3d",   "expGained": 509,  "thRequired": 11 },
+    { "level": 8,  "hitpoints": 4400, "troopCapacity": 40, "spellCapacity": 2, "siegeMachineCapacity": 1, "labLevelCap": 12, "buildCostElixir": 5000000,   "buildTime": "4d",   "expGained": 587,  "thRequired": 12 },
+    { "level": 9,  "hitpoints": 4800, "troopCapacity": 45, "spellCapacity": 2, "siegeMachineCapacity": 1, "labLevelCap": 13, "buildCostElixir": 8000000,   "buildTime": "6d",   "expGained": 720,  "thRequired": 13 },
+    { "level": 10, "hitpoints": 5200, "troopCapacity": 45, "spellCapacity": 3, "siegeMachineCapacity": 1, "labLevelCap": 14, "buildCostElixir": 10000000,  "buildTime": "7d",   "expGained": 777,  "thRequired": 14 },
+    { "level": 11, "hitpoints": 5400, "troopCapacity": 50, "spellCapacity": 3, "siegeMachineCapacity": 1, "labLevelCap": 15, "buildCostElixir": 12000000,  "buildTime": "8d",   "expGained": 831,  "thRequired": 15 },
+    { "level": 12, "hitpoints": 5600, "troopCapacity": 50, "spellCapacity": 3, "siegeMachineCapacity": 2, "labLevelCap": 15, "buildCostElixir": 14500000,  "buildTime": "9d",   "expGained": 881,  "thRequired": 16 },
+    { "level": 13, "hitpoints": 5800, "troopCapacity": 55, "spellCapacity": 3, "siegeMachineCapacity": 2, "labLevelCap": 15, "buildCostElixir": 20500000,  "buildTime": "16d",  "expGained": 1175, "thRequired": 17 }
+  ],
+  "machinesByClanCastleLevel": [
+    { "level": 6,  "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer"] },
+    { "level": 7,  "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks"] },
+    { "level": 8,  "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks", "Log Launcher"] },
+    { "level": 9,  "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks", "Log Launcher", "Flame Flinger"] },
+    { "level": 10, "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks", "Log Launcher", "Flame Flinger", "Battle Drill"] },
+    { "level": 11, "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks", "Log Launcher", "Flame Flinger", "Battle Drill", "Troop Launcher"] },
+    { "level": 12, "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks", "Log Launcher", "Flame Flinger", "Battle Drill", "Troop Launcher"] },
+    { "level": 13, "machines": ["Wall Wrecker", "Battle Blimp", "Stone Slammer", "Siege Barracks", "Log Launcher", "Flame Flinger", "Battle Drill", "Troop Launcher"] }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "schema": "skeleton_trap@1",
+  "levels": [
+    { "level": 1, "spawnedUnits": 2, "buildCostGold": 6000,     "buildTime": null,  "expGained": null, "thRequired": 8  },
+    { "level": 2, "spawnedUnits": 3, "buildCostGold": 250000,   "buildTime": "5h",  "expGained": 134,  "thRequired": 8  },
+    { "level": 3, "spawnedUnits": 4, "buildCostGold": 400000,   "buildTime": "8h",  "expGained": 169,  "thRequired": 9  },
+    { "level": 4, "spawnedUnits": 5, "buildCostGold": 1000000,  "buildTime": "12h", "expGained": 207,  "thRequired": 10 }
+  ]
+}

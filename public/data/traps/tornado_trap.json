@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "schema": "tornado_trap@1",
+  "levels": [
+    { "level": 1, "durationSeconds": 5, "totalDamage": 39, "buildCostGold": 1800000, "buildTime": null,  "expGained": null, "thRequired": 11 },
+    { "level": 2, "durationSeconds": 6, "totalDamage": 47, "buildCostGold": 2000000, "buildTime": "1d",  "expGained": 293,  "thRequired": 11 },
+    { "level": 3, "durationSeconds": 7, "totalDamage": 55, "buildCostGold": 2500000, "buildTime": "2d",  "expGained": 415,  "thRequired": 12 }
+  ]
+}

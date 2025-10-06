@@ -386,6 +386,22 @@ export default function ManageAccountsPage() {
                                             min={1}
                                             max={16}
                                         />
+                                        {/* <InlineEditableNumber
+                                            value={acc.level ?? ''}
+                                            onChange={(v) =>
+                                                setAccounts((prev) =>
+                                                    prev.map((a) => {
+                                                        const val = (v ?? 0) as number;
+                                                        // clamp to TH2–TH17
+                                                        const clamped = val ? Math.min(17, Math.max(2, val)) : undefined;
+                                                        return a.id === acc.id ? { ...a, level: clamped as TownHallLevel | undefined } : a;
+                                                    })
+                                                )
+                                            }
+                                            placeholder="TH"
+                                            min={2}
+                                            max={17}
+                                        /> */}
                                     </td>
 
                                     {/* Current / Nearest Upgrade */}

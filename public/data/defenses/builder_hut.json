@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "schema": "builder_hut@1",
+  "levels": [
+    { "level": 1, "damagePerSecond": null, "damagePerShot": null, "repairPerSecond": null, "repairPerHit": null, "hitpoints": 250,  "buildCostGold": null,       "buildTime": null,   "expGained": 0,   "thRequired": 1  },
+    { "level": 2, "damagePerSecond": 80,   "damagePerShot": 32,   "repairPerSecond": 50,   "repairPerHit": 37.5, "hitpoints": 1000, "buildCostGold": 4000000,    "buildTime": "3d",   "expGained": 509, "thRequired": 14 },
+    { "level": 3, "damagePerSecond": 100,  "damagePerShot": 40,   "repairPerSecond": 60,   "repairPerHit": 45,   "hitpoints": 1300, "buildCostGold": 5000000,    "buildTime": "4d",   "expGained": 587, "thRequired": 14 },
+    { "level": 4, "damagePerSecond": 120,  "damagePerShot": 48,   "repairPerSecond": 70,   "repairPerHit": 52.5, "hitpoints": 1600, "buildCostGold": 7000000,    "buildTime": "5d",   "expGained": 657, "thRequired": 14 },
+    { "level": 5, "damagePerSecond": 135,  "damagePerShot": 54,   "repairPerSecond": 80,   "repairPerHit": 60,   "hitpoints": 1800, "buildCostGold": 8000000,    "buildTime": "6d",   "expGained": 720, "thRequired": 15 },
+    { "level": 6, "damagePerSecond": 150,  "damagePerShot": 60,   "repairPerSecond": 85,   "repairPerHit": 63.75,"hitpoints": 1900, "buildCostGold": 9000000,    "buildTime": "7d",   "expGained": 777, "thRequired": 16 },
+    { "level": 7, "damagePerSecond": 165,  "damagePerShot": 66,   "repairPerSecond": 90,   "repairPerHit": 67.5, "hitpoints": 2000, "buildCostGold": 21000000,   "buildTime": "15d 6h","expGained": 1147,"thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "damagePerSecond": 172, "damagePerShot": 68.8, "repairPerSecond": 90, "repairPerHit": 67.5, "hitpoints": 2000, "buildCostGold": 10000000, "buildTime": "4d",   "expGained": 587, "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 172, "damagePerShot": 68.8, "repairPerSecond": 90, "repairPerHit": 67.5, "hitpoints": 2050, "buildCostGold": 5000000,  "buildTime": "6d",   "expGained": 720, "thRequired": 17 }
+  ]
+}

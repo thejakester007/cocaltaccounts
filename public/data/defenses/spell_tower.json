@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "schema": "spell_tower@1",
+  "levels": [
+    { "level": 1, "unlocksSpell": "Rage",         "hitpoints": 2500, "buildCostGold": 9000000,  "buildTime": "7d", "expGained": 777, "thRequired": 15 },
+    { "level": 2, "unlocksSpell": "Poison",       "hitpoints": 2800, "buildCostGold": 11000000, "buildTime": "8d", "expGained": 831, "thRequired": 15 },
+    { "level": 3, "unlocksSpell": "Invisibility", "hitpoints": 3100, "buildCostGold": 12000000, "buildTime": "9d", "expGained": 881, "thRequired": 15 }
+  ]
+}

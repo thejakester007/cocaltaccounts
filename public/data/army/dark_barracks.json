@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "schema": "dark_barracks@1",
+  "levels": [
+    { "level": 1,  "unlockedUnit": "Minion",             "hitpoints": 500,  "buildCostElixir": 200000,   "buildTime": "8h",      "expGained": 169,  "thRequired": 7 },
+    { "level": 2,  "unlockedUnit": "Hog Rider",          "hitpoints": 550,  "buildCostElixir": 600000,   "buildTime": "1d",      "expGained": 293,  "thRequired": 7 },
+    { "level": 3,  "unlockedUnit": "Valkyrie",           "hitpoints": 600,  "buildCostElixir": 1000000,  "buildTime": "1d 12h",  "expGained": 360,  "thRequired": 8 },
+    { "level": 4,  "unlockedUnit": "Golem",              "hitpoints": 650,  "buildCostElixir": 1600000,  "buildTime": "2d",      "expGained": 415,  "thRequired": 8 },
+    { "level": 5,  "unlockedUnit": "Witch",              "hitpoints": 700,  "buildCostElixir": 2200000,  "buildTime": "2d 12h",  "expGained": 464,  "thRequired": 9 },
+    { "level": 6,  "unlockedUnit": "Lava Hound",         "hitpoints": 750,  "buildCostElixir": 2900000,  "buildTime": "3d",      "expGained": 509,  "thRequired": 9 },
+    { "level": 7,  "unlockedUnit": "Bowler",             "hitpoints": 800,  "buildCostElixir": 4000000,  "buildTime": "5d",      "expGained": 657,  "thRequired": 10 },
+    { "level": 8,  "unlockedUnit": "Ice Golem",          "hitpoints": 850,  "buildCostElixir": 7000000,  "buildTime": "6d",      "expGained": 720,  "thRequired": 11 },
+    { "level": 9,  "unlockedUnit": "Headhunter",         "hitpoints": 900,  "buildCostElixir": 7200000,  "buildTime": "7d",      "expGained": 777,  "thRequired": 12 },
+    { "level": 10, "unlockedUnit": "Apprentice Warden",  "hitpoints": 950,  "buildCostElixir": 10000000, "buildTime": "8d",      "expGained": 831,  "thRequired": 13 },
+    { "level": 11, "unlockedUnit": "Druid",              "hitpoints": 1000, "buildCostElixir": 12000000, "buildTime": "9d",      "expGained": 881,  "thRequired": 14 },
+    { "level": 12, "unlockedUnit": "Furnace",            "hitpoints": 1050, "buildCostElixir": 20000000, "buildTime": "12d",     "expGained": 1018, "thRequired": 15 }
+  ]
+}

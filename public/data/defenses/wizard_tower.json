@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "schema": "wizard_tower@1",
+  "levels": [
+    { "level": 1,  "damagePerSecond": 11,  "damagePerShot": 14.3,  "hitpoints": 620,  "buildCostGold": 100000,  "buildTime": "1h",      "expGained": 60,   "thRequired": 5  },
+    { "level": 2,  "damagePerSecond": 13,  "damagePerShot": 16.9,  "hitpoints": 650,  "buildCostGold": 150000,  "buildTime": "1h 30m",  "expGained": 73,   "thRequired": 5  },
+    { "level": 3,  "damagePerSecond": 16,  "damagePerShot": 20.8,  "hitpoints": 680,  "buildCostGold": 250000,  "buildTime": "4h",      "expGained": 120,  "thRequired": 6  },
+    { "level": 4,  "damagePerSecond": 20,  "damagePerShot": 26,    "hitpoints": 730,  "buildCostGold": 400000,  "buildTime": "8h",      "expGained": 169,  "thRequired": 7  },
+    { "level": 5,  "damagePerSecond": 24,  "damagePerShot": 31.2,  "hitpoints": 840,  "buildCostGold": 550000,  "buildTime": "10h",     "expGained": 189,  "thRequired": 8  },
+    { "level": 6,  "damagePerSecond": 32,  "damagePerShot": 41.6,  "hitpoints": 960,  "buildCostGold": 660000,  "buildTime": "12h",     "expGained": 207,  "thRequired": 8  },
+    { "level": 7,  "damagePerSecond": 40,  "damagePerShot": 52,    "hitpoints": 1200, "buildCostGold": 1000000, "buildTime": "18h",     "expGained": 254,  "thRequired": 9  },
+    { "level": 8,  "damagePerSecond": 45,  "damagePerShot": 58.5,  "hitpoints": 1440, "buildCostGold": 1100000, "buildTime": "20h",     "expGained": 268,  "thRequired": 10 },
+    { "level": 9,  "damagePerSecond": 50,  "damagePerShot": 65,    "hitpoints": 1600, "buildCostGold": 1300000, "buildTime": "1d",      "expGained": 293,  "thRequired": 10 },
+    { "level": 10, "damagePerSecond": 62,  "damagePerShot": 80.6,  "hitpoints": 1900, "buildCostGold": 2000000, "buildTime": "1d 6h",   "expGained": 328,  "thRequired": 11 },
+    { "level": 11, "damagePerSecond": 70,  "damagePerShot": 91,    "hitpoints": 2120, "buildCostGold": 2500000, "buildTime": "1d 12h",  "expGained": 360,  "thRequired": 12 },
+    { "level": 12, "damagePerSecond": 78,  "damagePerShot": 101.4, "hitpoints": 2240, "buildCostGold": 2600000, "buildTime": "1d 18h",  "expGained": 388,  "thRequired": 13 },
+    { "level": 13, "damagePerSecond": 84,  "damagePerShot": 109.2, "hitpoints": 2500, "buildCostGold": 3000000, "buildTime": "2d",      "expGained": 415,  "thRequired": 13 },
+    { "level": 14, "damagePerSecond": 90,  "damagePerShot": 117,   "hitpoints": 2800, "buildCostGold": 4500000, "buildTime": "3d",      "expGained": 509,  "thRequired": 14 },
+    { "level": 15, "damagePerSecond": 95,  "damagePerShot": 123.5, "hitpoints": 3000, "buildCostGold": 5500000, "buildTime": "4d",      "expGained": 587,  "thRequired": 15 },
+    { "level": 16, "damagePerSecond": 102, "damagePerShot": 132.6, "hitpoints": 3150, "buildCostGold": 8000000, "buildTime": "5d 12h",  "expGained": 689,  "thRequired": 16 },
+    { "level": 17, "damagePerSecond": 110, "damagePerShot": 143,   "hitpoints": 3300, "buildCostGold": 20000000,"buildTime": "14d 18h", "expGained": 1128, "thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "damagePerSecond": 114, "damagePerShot": 148.2, "hitpoints": 3300, "buildCostGold": 8000000, "buildTime": "3d 12h", "expGained": 549, "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 114, "damagePerShot": 148.2, "hitpoints": 3375, "buildCostGold": 4000000, "buildTime": "5d 12h", "expGained": 689, "thRequired": 17 }
+  ]
+}

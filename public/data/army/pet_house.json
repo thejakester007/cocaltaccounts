@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "schema": "pet_house@1",
+  "levels": [
+    { "level": 1,  "unlockedPet": "L.A.S.S.I",       "hitpoints": 700,  "buildCostElixir": 3000000,  "buildTime": "2d",        "expGained": 415,  "thRequired": 14 },
+    { "level": 2,  "unlockedPet": "Electro Owl",     "hitpoints": 800,  "buildCostElixir": 4000000,  "buildTime": "3d",        "expGained": 509,  "thRequired": 14 },
+    { "level": 3,  "unlockedPet": "Mighty Yak",      "hitpoints": 900,  "buildCostElixir": 5000000,  "buildTime": "3d 12h",    "expGained": 549,  "thRequired": 14 },
+    { "level": 4,  "unlockedPet": "Unicorn",         "hitpoints": 1000, "buildCostElixir": 6000000,  "buildTime": "4d",        "expGained": 587,  "thRequired": 14 },
+    { "level": 5,  "unlockedPet": "Frosty",          "hitpoints": 1050, "buildCostElixir": 7000000,  "buildTime": "5d",        "expGained": 657,  "thRequired": 15 },
+    { "level": 6,  "unlockedPet": "Diggy",           "hitpoints": 1100, "buildCostElixir": 8000000,  "buildTime": "5d 12h",    "expGained": 689,  "thRequired": 15 },
+    { "level": 7,  "unlockedPet": "Poison Lizard",   "hitpoints": 1150, "buildCostElixir": 9000000,  "buildTime": "6d",        "expGained": 720,  "thRequired": 15 },
+    { "level": 8,  "unlockedPet": "Phoenix",         "hitpoints": 1200, "buildCostElixir": 10000000, "buildTime": "7d",        "expGained": 777,  "thRequired": 15 },
+    { "level": 9,  "unlockedPet": "Spirit Fox",      "hitpoints": 1250, "buildCostElixir": 11000000, "buildTime": "7d 12h",    "expGained": 804,  "thRequired": 16 },
+    { "level": 10, "unlockedPet": "Angry Jelly",     "hitpoints": 1300, "buildCostElixir": 12000000, "buildTime": "8d",        "expGained": 831,  "thRequired": 16 },
+    { "level": 11, "unlockedPet": "Sneezy",          "hitpoints": 1350, "buildCostElixir": 22000000, "buildTime": "15d 12h",   "expGained": 1157, "thRequired": 17 }
+  ],
+  "maxLevelsByHouseLevel": [
+    { "houseLevel": 1,  "petMax": { "L.A.S.S.I": 10 } },
+    { "houseLevel": 2,  "petMax": { "Electro Owl": 10 } },
+    { "houseLevel": 3,  "petMax": { "Mighty Yak": 10 } },
+    { "houseLevel": 4,  "petMax": { "Unicorn": 10 } },
+    { "houseLevel": 5,  "petMax": { "Frosty": 15, "Electro Owl": 10 } },
+    { "houseLevel": 6,  "petMax": { "Diggy": 10 } },
+    { "houseLevel": 7,  "petMax": { "Poison Lizard": 15, "Unicorn": 10 } },
+    { "houseLevel": 8,  "petMax": { "Phoenix": 10 } },
+    { "houseLevel": 9,  "petMax": { "Spirit Fox": 15, "Phoenix": 10 } },
+    { "houseLevel": 10, "petMax": { "Angry Jelly": 10 } },
+    { "houseLevel": 11, "petMax": { "Spirit Fox": 15, "Angry Jelly": 10, "Sneezy": 10 } }
+  ]
+}

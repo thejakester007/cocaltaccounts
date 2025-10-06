@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "schema": "giga_bomb@1",
+  "levels": [
+    { "level": 1, "damage": 1100, "buildCostGold": 5000000,  "buildTime": null, "expGained": null, "thRequired": 17 },
+    { "level": 2, "damage": 1200, "buildCostGold": 10000000, "buildTime": "8d", "expGained": 831,  "thRequired": 17 },
+    { "level": 3, "damage": 1300, "buildCostGold": 15000000, "buildTime": "10d","expGained": 929,  "thRequired": 17 }
+  ]
+}

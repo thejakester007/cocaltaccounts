@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "schema": "hero_hall@1",
+  "levels": [
+    { "level": 1,  "unlockedHero": "Barbarian King", "heroSlots": 1, "hitpoints": 2000, "buildCostElixir": 800000,  "buildTime": "1d",      "expGained": 293,  "thRequired": 7  },
+    { "level": 2,  "unlockedHero": "Archer Queen",   "heroSlots": 1, "hitpoints": 2400, "buildCostElixir": 1600000, "buildTime": "2d",      "expGained": 415,  "thRequired": 8  },
+    { "level": 3,  "unlockedHero": "Minion Prince",  "heroSlots": 2, "hitpoints": 2800, "buildCostElixir": 2300000, "buildTime": "3d",      "expGained": 509,  "thRequired": 9  },
+    { "level": 4,  "unlockedHero": null,             "heroSlots": 2, "hitpoints": 3200, "buildCostElixir": 3000000, "buildTime": "5d",      "expGained": 657,  "thRequired": 10 },
+    { "level": 5,  "unlockedHero": "Grand Warden",   "heroSlots": 3, "hitpoints": 3600, "buildCostElixir": 5000000, "buildTime": "6d",      "expGained": 720,  "thRequired": 11 },
+    { "level": 6,  "unlockedHero": null,             "heroSlots": 3, "hitpoints": 3800, "buildCostElixir": 6000000, "buildTime": "7d",      "expGained": 777,  "thRequired": 12 },
+    { "level": 7,  "unlockedHero": "Royal Champion", "heroSlots": 4, "hitpoints": 4200, "buildCostElixir": 9000000, "buildTime": "7d 12h",  "expGained": 804,  "thRequired": 13 },
+    { "level": 8,  "unlockedHero": null,             "heroSlots": 4, "hitpoints": 4600, "buildCostElixir": 10000000,"buildTime": "7d 18h",  "expGained": 818,  "thRequired": 14 },
+    { "level": 9,  "unlockedHero": null,             "heroSlots": 4, "hitpoints": 5000, "buildCostElixir": 12000000,"buildTime": "8d",      "expGained": 831,  "thRequired": 15 },
+    { "level": 10, "unlockedHero": null,             "heroSlots": 4, "hitpoints": 5400, "buildCostElixir": 14000000,"buildTime": "9d",      "expGained": 881,  "thRequired": 16 },
+    { "level": 11, "unlockedHero": null,             "heroSlots": 4, "hitpoints": 5800, "buildCostElixir": 21000000,"buildTime": "15d 12h", "expGained": 1157, "thRequired": 17 }
+  ]
+}

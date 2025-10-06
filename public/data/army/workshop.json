@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "schema": "workshop@1",
+  "levels": [
+    { "level": 1, "unlockedMachine": "Wall Wrecker",   "capacity": 1, "hitpoints": 1000, "buildCostElixir": 2400000,  "buildTime": "2d",     "expGained": 415, "thRequired": 12 },
+    { "level": 2, "unlockedMachine": "Battle Blimp",   "capacity": 2, "hitpoints": 1100, "buildCostElixir": 3700000,  "buildTime": "3d",     "expGained": 509, "thRequired": 12 },
+    { "level": 3, "unlockedMachine": "Stone Slammer",  "capacity": 3, "hitpoints": 1200, "buildCostElixir": 5000000,  "buildTime": "4d",     "expGained": 587, "thRequired": 12 },
+    { "level": 4, "unlockedMachine": "Siege Barracks", "capacity": 3, "hitpoints": 1300, "buildCostElixir": 8700000,  "buildTime": "7d",     "expGained": 777, "thRequired": 13 },
+    { "level": 5, "unlockedMachine": "Log Launcher",   "capacity": 3, "hitpoints": 1400, "buildCostElixir": 9000000,  "buildTime": "7d 6h",  "expGained": 791, "thRequired": 13 },
+    { "level": 6, "unlockedMachine": "Flame Flinger",  "capacity": 3, "hitpoints": 1500, "buildCostElixir": 10000000, "buildTime": "7d 12h", "expGained": 804, "thRequired": 14 },
+    { "level": 7, "unlockedMachine": "Battle Drill",   "capacity": 3, "hitpoints": 1600, "buildCostElixir": 11000000, "buildTime": "7d 18h", "expGained": 818, "thRequired": 15 },
+    { "level": 8, "unlockedMachine": "Troop Launcher", "capacity": 3, "hitpoints": 1700, "buildCostElixir": 13000000, "buildTime": "8d",     "expGained": 831, "thRequired": 16 }
+  ]
+}

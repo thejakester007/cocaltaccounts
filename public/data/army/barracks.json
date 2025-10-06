@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "schema": "barracks@1",
+  "levels": [
+    { "level": 1,  "unlockedUnit": "Barbarian",      "hitpoints": 100,  "buildCostElixir": 100,      "buildTime": "10s",     "expGained": 3,   "thRequired": 1 },
+    { "level": 2,  "unlockedUnit": "Archer",         "hitpoints": 200,  "buildCostElixir": 500,      "buildTime": "15s",     "expGained": 3,   "thRequired": 1 },
+    { "level": 3,  "unlockedUnit": "Giant",          "hitpoints": 250,  "buildCostElixir": 2500,     "buildTime": "2m",      "expGained": 10,  "thRequired": 1 },
+    { "level": 4,  "unlockedUnit": "Goblin",         "hitpoints": 300,  "buildCostElixir": 5000,     "buildTime": "30m",     "expGained": 42,  "thRequired": 2 },
+    { "level": 5,  "unlockedUnit": "Wall Breaker",   "hitpoints": 360,  "buildCostElixir": 20000,    "buildTime": "2h",      "expGained": 84,  "thRequired": 3 },
+    { "level": 6,  "unlockedUnit": "Balloon",        "hitpoints": 420,  "buildCostElixir": 120000,   "buildTime": "4h",      "expGained": 120, "thRequired": 4 },
+    { "level": 7,  "unlockedUnit": "Wizard",         "hitpoints": 500,  "buildCostElixir": 270000,   "buildTime": "6h",      "expGained": 146, "thRequired": 5 },
+    { "level": 8,  "unlockedUnit": "Healer",         "hitpoints": 575,  "buildCostElixir": 600000,   "buildTime": "12h",     "expGained": 207, "thRequired": 6 },
+    { "level": 9,  "unlockedUnit": "Dragon",         "hitpoints": 650,  "buildCostElixir": 1000000,  "buildTime": "1d",      "expGained": 293, "thRequired": 7 },
+    { "level": 10, "unlockedUnit": "P.E.K.K.A",      "hitpoints": 730,  "buildCostElixir": 1400000,  "buildTime": "1d 12h",  "expGained": 360, "thRequired": 8 },
+    { "level": 11, "unlockedUnit": "Baby Dragon",    "hitpoints": 810,  "buildCostElixir": 2600000,  "buildTime": "2d",      "expGained": 415, "thRequired": 9 },
+    { "level": 12, "unlockedUnit": "Miner",          "hitpoints": 900,  "buildCostElixir": 3700000,  "buildTime": "4d",      "expGained": 587, "thRequired": 10 },
+    { "level": 13, "unlockedUnit": "Electro Dragon", "hitpoints": 980,  "buildCostElixir": 6000000,  "buildTime": "5d",      "expGained": 657, "thRequired": 11 },
+    { "level": 14, "unlockedUnit": "Yeti",           "hitpoints": 1050, "buildCostElixir": 7000000,  "buildTime": "7d",      "expGained": 777, "thRequired": 12 },
+    { "level": 15, "unlockedUnit": "Dragon Rider",   "hitpoints": 1150, "buildCostElixir": 9000000,  "buildTime": "7d 4h",   "expGained": 786, "thRequired": 13 },
+    { "level": 16, "unlockedUnit": "Electro Titan",  "hitpoints": 1250, "buildCostElixir": 11000000, "buildTime": "8d",      "expGained": 831, "thRequired": 14 },
+    { "level": 17, "unlockedUnit": "Root Rider",     "hitpoints": 1350, "buildCostElixir": 12600000, "buildTime": "9d",      "expGained": 881, "thRequired": 15 },
+    { "level": 18, "unlockedUnit": "Thrower",        "hitpoints": 1450, "buildCostElixir": 15000000, "buildTime": "11d",     "expGained": 974, "thRequired": 16 }
+  ]
+}

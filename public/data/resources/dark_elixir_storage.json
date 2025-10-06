@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "schema": "resource_storages@1",
+  "appliesTo": ["dark_elixir"],
+  "levels": [
+    { "level": 1,  "storageCapacity": 10000,  "hitpoints": 2000, "buildCostElixir": 250000,  "buildTime": "8h",      "expGained": 169,  "thRequired": 7  },
+    { "level": 2,  "storageCapacity": 17500,  "hitpoints": 2200, "buildCostElixir": 500000,  "buildTime": "16h",     "expGained": 240,  "thRequired": 7  },
+    { "level": 3,  "storageCapacity": 40000,  "hitpoints": 2400, "buildCostElixir": 1000000, "buildTime": "1d",      "expGained": 293,  "thRequired": 8  },
+    { "level": 4,  "storageCapacity": 75000,  "hitpoints": 2600, "buildCostElixir": 1500000, "buildTime": "1d 12h",  "expGained": 360,  "thRequired": 8  },
+    { "level": 5,  "storageCapacity": 140000, "hitpoints": 2900, "buildCostElixir": 2000000, "buildTime": "1d 16h",  "expGained": 379,  "thRequired": 9  },
+    { "level": 6,  "storageCapacity": 180000, "hitpoints": 3200, "buildCostElixir": 2400000, "buildTime": "2d",      "expGained": 415,  "thRequired": 9  },
+    { "level": 7,  "storageCapacity": 220000, "hitpoints": 3500, "buildCostElixir": 3800000, "buildTime": "3d",      "expGained": 509,  "thRequired": 12 },
+    { "level": 8,  "storageCapacity": 280000, "hitpoints": 3800, "buildCostElixir": 5400000, "buildTime": "4d 12h",  "expGained": 623,  "thRequired": 13 },
+    { "level": 9,  "storageCapacity": 330000, "hitpoints": 4100, "buildCostElixir": 6600000, "buildTime": "5d",      "expGained": 657,  "thRequired": 14 },
+    { "level": 10, "storageCapacity": 360000, "hitpoints": 4300, "buildCostElixir": 8000000, "buildTime": "5d 12h",  "expGained": 689,  "thRequired": 15 },
+    { "level": 11, "storageCapacity": 390000, "hitpoints": 4500, "buildCostElixir": 10000000,"buildTime": "6d",      "expGained": 720,  "thRequired": 16 },
+    { "level": 12, "storageCapacity": 420000, "hitpoints": 4700, "buildCostElixir": 16000000,"buildTime": "15d",     "expGained": 1138, "thRequired": 17 }
+  ]
+}

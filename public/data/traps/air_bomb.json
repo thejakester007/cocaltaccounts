@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "schema": "air_bomb@1",
+  "levels": [
+    { "level": 1,  "damage": 100, "buildCostGold": 4000,      "buildTime": null,    "expGained": null, "thRequired": 5  },
+    { "level": 2,  "damage": 120, "buildCostGold": 20000,     "buildTime": "30m",   "expGained": 42,   "thRequired": 5  },
+    { "level": 3,  "damage": 144, "buildCostGold": 75000,     "buildTime": "1h",    "expGained": 60,   "thRequired": 7  },
+    { "level": 4,  "damage": 173, "buildCostGold": 300000,    "buildTime": "4h",    "expGained": 120,  "thRequired": 9  },
+    { "level": 5,  "damage": 208, "buildCostGold": 550000,    "buildTime": "8h",    "expGained": 169,  "thRequired": 11 },
+    { "level": 6,  "damage": 232, "buildCostGold": 800000,    "buildTime": "12h",   "expGained": 207,  "thRequired": 12 },
+    { "level": 7,  "damage": 252, "buildCostGold": 1000000,   "buildTime": "18h",   "expGained": 254,  "thRequired": 13 },
+    { "level": 8,  "damage": 280, "buildCostGold": 1200000,   "buildTime": "1d",    "expGained": 293,  "thRequired": 13 },
+    { "level": 9,  "damage": 325, "buildCostGold": 2000000,   "buildTime": "1d12h", "expGained": 360,  "thRequired": 14 },
+    { "level": 10, "damage": 350, "buildCostGold": 3000000,   "buildTime": "2d",    "expGained": 415,  "thRequired": 15 },
+    { "level": 11, "damage": 375, "buildCostGold": 5000000,   "buildTime": "3d",    "expGained": 509,  "thRequired": 16 },
+    { "level": 12, "damage": 400, "buildCostGold": 11000000,  "buildTime": "8d12h", "expGained": 856,  "thRequired": 17 }
+  ]
+}

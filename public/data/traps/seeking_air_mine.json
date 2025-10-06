@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "schema": "seeking_air_mine@1",
+  "levels": [
+    { "level": 1, "damage": 1500, "buildCostGold": 12000,     "buildTime": null,   "expGained": null, "thRequired": 7  },
+    { "level": 2, "damage": 1800, "buildCostGold": 600000,    "buildTime": "12h",  "expGained": 207,  "thRequired": 9  },
+    { "level": 3, "damage": 2100, "buildCostGold": 1200000,   "buildTime": "1d",   "expGained": 293,  "thRequired": 10 },
+    { "level": 4, "damage": 2500, "buildCostGold": 2500000,   "buildTime": "2d",   "expGained": 415,  "thRequired": 13 },
+    { "level": 5, "damage": 2800, "buildCostGold": 5000000,   "buildTime": "4d",   "expGained": 587,  "thRequired": 15 },
+    { "level": 6, "damage": 3000, "buildCostGold": 6500000,   "buildTime": "5d",   "expGained": 657,  "thRequired": 16 },
+    { "level": 7, "damage": 3200, "buildCostGold": 14000000,  "buildTime": "10d",  "expGained": 929,  "thRequired": 17 }
+  ]
+}

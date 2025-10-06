@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "schema": "laboratory@1",
+  "levels": [
+    { "level": 1,  "hitpoints": 500,  "buildCostElixir": 5000,     "buildTime": "1m",     "expGained": 7,    "thRequired": 3  },
+    { "level": 2,  "hitpoints": 550,  "buildCostElixir": 25000,    "buildTime": "30m",    "expGained": 42,   "thRequired": 4  },
+    { "level": 3,  "hitpoints": 600,  "buildCostElixir": 50000,    "buildTime": "2h",     "expGained": 84,   "thRequired": 5  },
+    { "level": 4,  "hitpoints": 650,  "buildCostElixir": 100000,   "buildTime": "4h",     "expGained": 120,  "thRequired": 6  },
+    { "level": 5,  "hitpoints": 700,  "buildCostElixir": 200000,   "buildTime": "8h",     "expGained": 169,  "thRequired": 7  },
+    { "level": 6,  "hitpoints": 750,  "buildCostElixir": 400000,   "buildTime": "16h",    "expGained": 240,  "thRequired": 8  },
+    { "level": 7,  "hitpoints": 830,  "buildCostElixir": 800000,   "buildTime": "1d",     "expGained": 293,  "thRequired": 9  },
+    { "level": 8,  "hitpoints": 950,  "buildCostElixir": 1300000,  "buildTime": "1d 18h", "expGained": 388,  "thRequired": 10 },
+    { "level": 9,  "hitpoints": 1070, "buildCostElixir": 2100000,  "buildTime": "2d 18h", "expGained": 487,  "thRequired": 11 },
+    { "level": 10, "hitpoints": 1140, "buildCostElixir": 3800000,  "buildTime": "4d",     "expGained": 587,  "thRequired": 12 },
+    { "level": 11, "hitpoints": 1210, "buildCostElixir": 5500000,  "buildTime": "6d",     "expGained": 720,  "thRequired": 13 },
+    { "level": 12, "hitpoints": 1280, "buildCostElixir": 8100000,  "buildTime": "7d",     "expGained": 777,  "thRequired": 14 },
+    { "level": 13, "hitpoints": 1350, "buildCostElixir": 10800000, "buildTime": "8d",     "expGained": 831,  "thRequired": 15 },
+    { "level": 14, "hitpoints": 1400, "buildCostElixir": 13000000, "buildTime": "9d",     "expGained": 881,  "thRequired": 16 },
+    { "level": 15, "hitpoints": 1450, "buildCostElixir": 20000000, "buildTime": "16d",    "expGained": 1175, "thRequired": 17 }
+  ]
+}

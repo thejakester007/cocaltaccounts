@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "schema": "fire_spitter@1",
+  "levels": [
+    { "level": 1, "damagePerSecond": 399, "damagePerShot": 46, "hitpoints": 4500, "buildCostGold": 22500000, "buildTime": "15d", "expGained": 1138, "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 425, "damagePerShot": 49, "hitpoints": 5000, "buildCostGold": 23000000, "buildTime": "16d", "expGained": 1175, "thRequired": 17 }
+  ],
+  "superchargeLevels": [
+    { "level": 1, "damagePerSecond": 442, "damagePerShot": 51, "hitpoints": 5000, "buildCostGold": 12000000, "buildTime": "6d", "expGained": 720, "thRequired": 17 },
+    { "level": 2, "damagePerSecond": 442, "damagePerShot": 51, "hitpoints": 5250, "buildCostGold": 10000000, "buildTime": "7d", "expGained": 777, "thRequired": 17 }
+  ]
+}
