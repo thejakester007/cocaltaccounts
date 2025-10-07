@@ -8,7 +8,7 @@ import {
   persistStore,
   FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import storage from "./persistStorage";
 
 //#region Imports
 // add Imports here!!!
@@ -34,9 +34,11 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // --- store ---
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: gDM =>
-    gDM({
-      serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER] },
+  middleware: (getDefault) =>
+    getDefault({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
     }),
 });
 

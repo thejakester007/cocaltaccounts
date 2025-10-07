@@ -4,34 +4,41 @@ import React, { useMemo } from "react";
 import KpiRow from "./KpiRow";
 import { useAppSelector } from "@/store";
 import {
-  selectBuildersDist,
-  selectActiveThWithUpgrades,
-  selectNextCompletion,
-  selectAccountsList,
+  selectBuildersDist,            // number[]: [count0, count1, ..., count5]
+  selectActiveThWithUpgrades,    // number: active accounts with an upgrade
+  selectNextCompletion,          // UpgradeEvent | null
+  selectAccountsList,            // Account[]
 } from "@/store/selectors/dashboard";
 
 type BuildersBucket = { builders: number; accounts: number };
-const buildBuildersDist = (arr: number[]): BuildersBucket[] => {
-  const map = new Map<number, number>();
-  for (const n of arr) map.set(n, (map.get(n) ?? 0) + 1);
-  return [...map.entries()]
-    .map(([builders, accounts]) => ({ builders, accounts }))
-    .sort((a, b) => b.builders - a.builders || b.accounts - a.accounts);
-};
 
 const KpiRowContainer: React.FC = () => {
+  // base data
   const accounts = useAppSelector(selectAccountsList);
   const totalAccounts = accounts.length;
 
-  const buildersDist = useMemo(
-    () => buildBuildersDist(accounts.map(a => Number((a as any).buildersCount ?? 0))),
+  // builders distribution -> convert number[] to BuildersBucket[]
+  const rawDist = useAppSelector(selectBuildersDist);
+  const buildersDist: BuildersBucket[] = useMemo(
+    () =>
+      rawDist
+        .map((accounts, builders) => ({ builders, accounts }))
+        .filter((b) => b.accounts > 0)
+        .sort((a, b) => b.builders - a.builders || b.accounts - a.accounts),
+    [rawDist]
+  );
+
+  // upgrades activity
+  const active = useAppSelector(selectActiveThWithUpgrades);
+  const totalThCount = useMemo(
+    () => accounts.filter((a) => typeof a.level === "number").length,
     [accounts]
   );
 
-  const { active, total } = useAppSelector(selectActiveThWithUpgrades); // active THs with upgrades, total THs
-  const next = useAppSelector(selectNextCompletion); // may be undefined until you add upgrades
+  // next completion (may be null if no upgrades)
+  const next = useAppSelector(selectNextCompletion);
 
-  // war participants not in store yet → show 0 / totalAccounts for now
+  // war participants not tracked yet
   const warParticipants = 0;
 
   return (
@@ -42,15 +49,15 @@ const KpiRowContainer: React.FC = () => {
       warTotal={totalAccounts}
       warTitle="In war right now"
       activeThWithUpgrades={active}
-      totalThCount={total}
+      totalThCount={totalThCount}
       activityTitle="Builder activity"
       nextCompletion={
-        next && {
+        next ? {
           accountName: next.accountName,
-          thLevel: next.thLevel,
+          thLevel: next.thLevel ?? 0,
           label: next.label,
           remainingMs: next.remainingMs,
-        }
+        } : undefined
       }
     />
   );

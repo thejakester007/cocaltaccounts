@@ -1,81 +1,82 @@
-"use client";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { Account, Upgrade } from '@/data/types';
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+type AccountsState = { list: Account[] } | Account[];
 
-export type Account = {
-    id: string;
-    name: string;
-    level: number;
-    note?: string;
-    playerTag: string;
-    apiKey: string;
-    isActive: boolean;
-    buildersCount?: number;
-    inWar?: boolean;
-};
+const initialState: AccountsState = { list: [] };
 
-export type AccountsState = {
-    accounts: Account[];
-};
-
-const initialState: AccountsState = { accounts: [] };
+function ensureList(state: AccountsState): Account[] {
+  const s = state as any;
+  if (Array.isArray(s)) {
+    const list: Account[] = s;
+    (state as any).list = list;
+    return list;
+  }
+  if (!Array.isArray(s.list)) {
+    s.list = [];
+  }
+  return s.list as Account[];
+}
 
 const accountsSlice = createSlice({
-    name: "accounts",
-    initialState,
-    reducers: {
-        addAccount: (s, { payload }: PayloadAction<{
-            name: string;
-            level: number;
-            playerTag: string;
-            apiKey: string;
-            note?: string
-        }>) => {
-            s.accounts.unshift({
-                id: crypto.randomUUID(),
-                name: payload.name,
-                level: payload.level,
-                note: payload.note,
-                playerTag: payload.playerTag,
-                apiKey: payload.apiKey,
-                isActive: true
-            });
-        },
-        renameAccount: (s, { payload }: PayloadAction<{
-            id: string;
-            name: string;
-            level: number;
-            note?: string
-        }>) => {
-            const a = s.accounts.find(x => x.id === payload.id);
-            if (a) {
-                a.name = payload.name;
-                a.level = payload.level;
-                a.note = payload.note;
-            }
-        },
-        toggleAccountActive: (s, { payload }: PayloadAction<{ id: string }>) => {
-            const a = s.accounts.find(x => x.id === payload.id);
-            if (a) a.isActive = !a.isActive;
-        },
-        deleteAccount: (s, { payload }: PayloadAction<{ id: string }>) => {
-            s.accounts = s.accounts.filter(x => x.id !== payload.id);
-        },
-        clearAllAccounts: () => initialState,
+  name: 'accounts',
+  initialState,
+  reducers: {
+    replaceAll(state, action: PayloadAction<Account[]>) {
+      const list = ensureList(state);
+      list.length = 0;
+      list.push(...action.payload);
     },
+    addAccount(state, action: PayloadAction<Account>) {
+      const list = ensureList(state);
+      list.unshift(action.payload);
+    },
+    removeAccount(state, action: PayloadAction<string>) {
+      const list = ensureList(state);
+      const idx = list.findIndex((a) => a.id === action.payload);
+      if (idx >= 0) list.splice(idx, 1);
+    },
+    renameAccount(state, action: PayloadAction<{ id: string; label: string }>) {
+      const list = ensureList(state);
+      const a = list.find((x) => x.id === action.payload.id);
+      if (a) a.label = action.payload.label;
+    },
+    setLevel(state, action: PayloadAction<{ id: string; level: number | undefined }>) {
+      const list = ensureList(state);
+      const a = list.find((x) => x.id === action.payload.id);
+      if (a) a.level = action.payload.level;
+    },
+    setUpgrade(state, action: PayloadAction<{ id: string; upgrade: Upgrade | null }>) {
+      const list = ensureList(state);
+      const a = list.find((x) => x.id === action.payload.id);
+      if (a) a.activeUpgrade = action.payload.upgrade;
+    },
+    clearUpgrade(state, action: PayloadAction<string>) {
+      const list = ensureList(state);
+      const a = list.find((x) => x.id === action.payload);
+      if (a) a.activeUpgrade = null;
+    },
+    moveAccount(state, action: PayloadAction<{ id: string; dir: 'up' | 'down' }>) {
+      const list = ensureList(state);
+      const idx = list.findIndex((a) => a.id === action.payload.id);
+      if (idx < 0) return;
+      const target = action.payload.dir === 'up' ? idx - 1 : idx + 1;
+      if (target < 0 || target >= list.length) return;
+      const [item] = list.splice(idx, 1);
+      list.splice(target, 0, item);
+    },
+  },
 });
 
 export const {
-    addAccount,
-    renameAccount,
-    toggleAccountActive,
-    deleteAccount,
-    clearAllAccounts,
+  replaceAll,
+  addAccount,
+  removeAccount,
+  renameAccount,
+  setLevel,
+  setUpgrade,
+  clearUpgrade,
+  moveAccount,
 } = accountsSlice.actions;
 
 export const accountsReducer = accountsSlice.reducer;
-
-/** Selectors */
-export const selectAccounts = (state: { accounts: AccountsState }) => state.accounts.accounts;
-export const selectActiveCount = (state: { accounts: AccountsState }) =>
-    state.accounts.accounts.filter(a => a.isActive).length;

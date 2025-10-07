@@ -962,3 +962,23 @@ export interface TrapGigaBombFile {
   schema: string;                   // "giga_bomb@1"
   levels: TrapGigaBombLevelRow[];
 }
+
+// ---- Accounts domain types ----
+export type Upgrade = {
+  id: string;
+  name: string;
+  endsAtIso?: string;
+};
+
+export type Account = {
+  id: string;
+  label: string;
+  level: number | undefined;
+  activeUpgrade?: Upgrade | null;
+  notes?: string;
+  // (optional props we’ll use later for KPIs)
+  buildersCount?: number;
+  inWar?: boolean;
+};
+
+export type SortMode = 'created' | 'alpha';
