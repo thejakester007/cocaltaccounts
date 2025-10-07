@@ -9,7 +9,9 @@ export type Account = {
     note?: string;
     playerTag: string;
     apiKey: string;
-    isActive: boolean
+    isActive: boolean;
+    buildersCount?: number;
+    inWar?: boolean;
 };
 
 export type AccountsState = {
