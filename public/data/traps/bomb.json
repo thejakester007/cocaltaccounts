@@ -2,18 +2,179 @@
   "version": 1,
   "schema": "bomb@1",
   "levels": [
-    { "level": 1,  "damage": 20,  "buildCostGold": 400,      "buildTime": null,   "expGained": null, "thRequired": 3  },
-    { "level": 2,  "damage": 24,  "buildCostGold": 1000,     "buildTime": "6m",   "expGained": 18,   "thRequired": 3  },
-    { "level": 3,  "damage": 29,  "buildCostGold": 10000,    "buildTime": "20m",  "expGained": 34,   "thRequired": 5  },
-    { "level": 4,  "damage": 35,  "buildCostGold": 40000,    "buildTime": "40m",  "expGained": 48,   "thRequired": 7  },
-    { "level": 5,  "damage": 42,  "buildCostGold": 100000,   "buildTime": "1h",   "expGained": 60,   "thRequired": 8  },
-    { "level": 6,  "damage": 54,  "buildCostGold": 230000,   "buildTime": "3h",   "expGained": 103,  "thRequired": 9  },
-    { "level": 7,  "damage": 72,  "buildCostGold": 330000,   "buildTime": "5h",   "expGained": 134,  "thRequired": 10 },
-    { "level": 8,  "damage": 92,  "buildCostGold": 500000,   "buildTime": "6h",   "expGained": 146,  "thRequired": 11 },
-    { "level": 9,  "damage": 125, "buildCostGold": 750000,   "buildTime": "12h",  "expGained": 207,  "thRequired": 13 },
-    { "level": 10, "damage": 140, "buildCostGold": 1300000,  "buildTime": "1d",   "expGained": 293,  "thRequired": 14 },
-    { "level": 11, "damage": 155, "buildCostGold": 2500000,  "buildTime": "2d",   "expGained": 415,  "thRequired": 15 },
-    { "level": 12, "damage": 170, "buildCostGold": 4000000,  "buildTime": "3d",   "expGained": 509,  "thRequired": 16 },
-    { "level": 13, "damage": 185, "buildCostGold": 10000000, "buildTime": "8d",   "expGained": 831,  "thRequired": 17 }
+    {
+      "level": 1,
+      "damage": 20,
+      "buildCostGold": 400,
+      "buildTime": null,
+      "expGained": null,
+      "thRequired": 3
+    },
+    {
+      "level": 2,
+      "damage": 24,
+      "buildCostGold": 1000,
+      "buildTime": "6m",
+      "expGained": 18,
+      "thRequired": 3
+    },
+    {
+      "level": 3,
+      "damage": 29,
+      "buildCostGold": 10000,
+      "buildTime": "20m",
+      "expGained": 34,
+      "thRequired": 5
+    },
+    {
+      "level": 4,
+      "damage": 35,
+      "buildCostGold": 40000,
+      "buildTime": "40m",
+      "expGained": 48,
+      "thRequired": 7
+    },
+    {
+      "level": 5,
+      "damage": 42,
+      "buildCostGold": 100000,
+      "buildTime": "1h",
+      "expGained": 60,
+      "thRequired": 8
+    },
+    {
+      "level": 6,
+      "damage": 54,
+      "buildCostGold": 230000,
+      "buildTime": "3h",
+      "expGained": 103,
+      "thRequired": 9
+    },
+    {
+      "level": 7,
+      "damage": 72,
+      "buildCostGold": 330000,
+      "buildTime": "5h",
+      "expGained": 134,
+      "thRequired": 10
+    },
+    {
+      "level": 8,
+      "damage": 92,
+      "buildCostGold": 500000,
+      "buildTime": "6h",
+      "expGained": 146,
+      "thRequired": 11
+    },
+    {
+      "level": 9,
+      "damage": 125,
+      "buildCostGold": 750000,
+      "buildTime": "12h",
+      "expGained": 207,
+      "thRequired": 13
+    },
+    {
+      "level": 10,
+      "damage": 140,
+      "buildCostGold": 1300000,
+      "buildTime": "1d",
+      "expGained": 293,
+      "thRequired": 14
+    },
+    {
+      "level": 11,
+      "damage": 155,
+      "buildCostGold": 2500000,
+      "buildTime": "2d",
+      "expGained": 415,
+      "thRequired": 15
+    },
+    {
+      "level": 12,
+      "damage": 170,
+      "buildCostGold": 4000000,
+      "buildTime": "3d",
+      "expGained": 509,
+      "thRequired": 16
+    },
+    {
+      "level": 13,
+      "damage": 185,
+      "buildCostGold": 10000000,
+      "buildTime": "8d",
+      "expGained": 831,
+      "thRequired": 17
+    }
+  ],
+  "availabilityByTH": [
+    {
+      "th": 1,
+      "count": 0
+    },
+    {
+      "th": 2,
+      "count": 0
+    },
+    {
+      "th": 3,
+      "count": 2
+    },
+    {
+      "th": 4,
+      "count": 2
+    },
+    {
+      "th": 5,
+      "count": 4
+    },
+    {
+      "th": 6,
+      "count": 4
+    },
+    {
+      "th": 7,
+      "count": 6
+    },
+    {
+      "th": 8,
+      "count": 6
+    },
+    {
+      "th": 9,
+      "count": 6
+    },
+    {
+      "th": 10,
+      "count": 6
+    },
+    {
+      "th": 11,
+      "count": 6
+    },
+    {
+      "th": 12,
+      "count": 6
+    },
+    {
+      "th": 13,
+      "count": 7
+    },
+    {
+      "th": 14,
+      "count": 8
+    },
+    {
+      "th": 15,
+      "count": 8
+    },
+    {
+      "th": 16,
+      "count": 8
+    },
+    {
+      "th": 17,
+      "count": 8
+    }
   ]
 }

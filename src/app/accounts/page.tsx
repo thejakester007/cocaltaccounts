@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { Account, SortMode } from '@/data/types';
 import { STORAGE_KEY, uid } from '@/lib/accounts';

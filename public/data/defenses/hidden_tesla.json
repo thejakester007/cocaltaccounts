@@ -2,25 +2,257 @@
   "version": 1,
   "schema": "hidden_tesla@1",
   "levels": [
-    { "level": 1,  "damagePerSecond": 34,  "damagePerShot": 20.4, "hitpoints": 600,  "buildCostGold": 250000,  "buildTime": "2h",     "expGained": 84,  "thRequired": 7  },
-    { "level": 2,  "damagePerSecond": 40,  "damagePerShot": 24,   "hitpoints": 630,  "buildCostGold": 350000,  "buildTime": "3h",     "expGained": 103, "thRequired": 7  },
-    { "level": 3,  "damagePerSecond": 48,  "damagePerShot": 28.8, "hitpoints": 660,  "buildCostGold": 500000,  "buildTime": "4h",     "expGained": 120, "thRequired": 7  },
-    { "level": 4,  "damagePerSecond": 55,  "damagePerShot": 33,   "hitpoints": 690,  "buildCostGold": 600000,  "buildTime": "6h",     "expGained": 146, "thRequired": 8  },
-    { "level": 5,  "damagePerSecond": 64,  "damagePerShot": 38.4, "hitpoints": 730,  "buildCostGold": 800000,  "buildTime": "12h",    "expGained": 207, "thRequired": 8  },
-    { "level": 6,  "damagePerSecond": 75,  "damagePerShot": 45,   "hitpoints": 770,  "buildCostGold": 1200000, "buildTime": "1d",     "expGained": 293, "thRequired": 8  },
-    { "level": 7,  "damagePerSecond": 87,  "damagePerShot": 52.2, "hitpoints": 810,  "buildCostGold": 1400000, "buildTime": "1d 6h",  "expGained": 328, "thRequired": 9  },
-    { "level": 8,  "damagePerSecond": 99,  "damagePerShot": 59.4, "hitpoints": 850,  "buildCostGold": 1600000, "buildTime": "1d 12h", "expGained": 360, "thRequired": 10 },
-    { "level": 9,  "damagePerSecond": 110, "damagePerShot": 66,   "hitpoints": 900,  "buildCostGold": 2100000, "buildTime": "1d 18h", "expGained": 388, "thRequired": 11 },
-    { "level": 10, "damagePerSecond": 120, "damagePerShot": 72,   "hitpoints": 980,  "buildCostGold": 3000000, "buildTime": "2d",     "expGained": 415, "thRequired": 12 },
-    { "level": 11, "damagePerSecond": 130, "damagePerShot": 78,   "hitpoints": 1100, "buildCostGold": 3100000, "buildTime": "2d 12h", "expGained": 464, "thRequired": 13 },
-    { "level": 12, "damagePerSecond": 140, "damagePerShot": 84,   "hitpoints": 1200, "buildCostGold": 3700000, "buildTime": "3d",     "expGained": 509, "thRequired": 13 },
-    { "level": 13, "damagePerSecond": 150, "damagePerShot": 90,   "hitpoints": 1350, "buildCostGold": 5100000, "buildTime": "4d",     "expGained": 587, "thRequired": 14 },
-    { "level": 14, "damagePerSecond": 160, "damagePerShot": 96,   "hitpoints": 1450, "buildCostGold": 6500000, "buildTime": "5d",     "expGained": 657, "thRequired": 15 },
-    { "level": 15, "damagePerSecond": 170, "damagePerShot": 102,  "hitpoints": 1550, "buildCostGold": 8200000, "buildTime": "6d",     "expGained": 720, "thRequired": 16 },
-    { "level": 16, "damagePerSecond": 180, "damagePerShot": 108,  "hitpoints": 1650, "buildCostGold": 20500000,"buildTime": "15d",    "expGained": 1138,"thRequired": 17 }
+    {
+      "level": 1,
+      "damagePerSecond": 34,
+      "damagePerShot": 20.4,
+      "hitpoints": 600,
+      "buildCostGold": 250000,
+      "buildTime": "2h",
+      "expGained": 84,
+      "thRequired": 7
+    },
+    {
+      "level": 2,
+      "damagePerSecond": 40,
+      "damagePerShot": 24,
+      "hitpoints": 630,
+      "buildCostGold": 350000,
+      "buildTime": "3h",
+      "expGained": 103,
+      "thRequired": 7
+    },
+    {
+      "level": 3,
+      "damagePerSecond": 48,
+      "damagePerShot": 28.8,
+      "hitpoints": 660,
+      "buildCostGold": 500000,
+      "buildTime": "4h",
+      "expGained": 120,
+      "thRequired": 7
+    },
+    {
+      "level": 4,
+      "damagePerSecond": 55,
+      "damagePerShot": 33,
+      "hitpoints": 690,
+      "buildCostGold": 600000,
+      "buildTime": "6h",
+      "expGained": 146,
+      "thRequired": 8
+    },
+    {
+      "level": 5,
+      "damagePerSecond": 64,
+      "damagePerShot": 38.4,
+      "hitpoints": 730,
+      "buildCostGold": 800000,
+      "buildTime": "12h",
+      "expGained": 207,
+      "thRequired": 8
+    },
+    {
+      "level": 6,
+      "damagePerSecond": 75,
+      "damagePerShot": 45,
+      "hitpoints": 770,
+      "buildCostGold": 1200000,
+      "buildTime": "1d",
+      "expGained": 293,
+      "thRequired": 8
+    },
+    {
+      "level": 7,
+      "damagePerSecond": 87,
+      "damagePerShot": 52.2,
+      "hitpoints": 810,
+      "buildCostGold": 1400000,
+      "buildTime": "1d 6h",
+      "expGained": 328,
+      "thRequired": 9
+    },
+    {
+      "level": 8,
+      "damagePerSecond": 99,
+      "damagePerShot": 59.4,
+      "hitpoints": 850,
+      "buildCostGold": 1600000,
+      "buildTime": "1d 12h",
+      "expGained": 360,
+      "thRequired": 10
+    },
+    {
+      "level": 9,
+      "damagePerSecond": 110,
+      "damagePerShot": 66,
+      "hitpoints": 900,
+      "buildCostGold": 2100000,
+      "buildTime": "1d 18h",
+      "expGained": 388,
+      "thRequired": 11
+    },
+    {
+      "level": 10,
+      "damagePerSecond": 120,
+      "damagePerShot": 72,
+      "hitpoints": 980,
+      "buildCostGold": 3000000,
+      "buildTime": "2d",
+      "expGained": 415,
+      "thRequired": 12
+    },
+    {
+      "level": 11,
+      "damagePerSecond": 130,
+      "damagePerShot": 78,
+      "hitpoints": 1100,
+      "buildCostGold": 3100000,
+      "buildTime": "2d 12h",
+      "expGained": 464,
+      "thRequired": 13
+    },
+    {
+      "level": 12,
+      "damagePerSecond": 140,
+      "damagePerShot": 84,
+      "hitpoints": 1200,
+      "buildCostGold": 3700000,
+      "buildTime": "3d",
+      "expGained": 509,
+      "thRequired": 13
+    },
+    {
+      "level": 13,
+      "damagePerSecond": 150,
+      "damagePerShot": 90,
+      "hitpoints": 1350,
+      "buildCostGold": 5100000,
+      "buildTime": "4d",
+      "expGained": 587,
+      "thRequired": 14
+    },
+    {
+      "level": 14,
+      "damagePerSecond": 160,
+      "damagePerShot": 96,
+      "hitpoints": 1450,
+      "buildCostGold": 6500000,
+      "buildTime": "5d",
+      "expGained": 657,
+      "thRequired": 15
+    },
+    {
+      "level": 15,
+      "damagePerSecond": 170,
+      "damagePerShot": 102,
+      "hitpoints": 1550,
+      "buildCostGold": 8200000,
+      "buildTime": "6d",
+      "expGained": 720,
+      "thRequired": 16
+    },
+    {
+      "level": 16,
+      "damagePerSecond": 180,
+      "damagePerShot": 108,
+      "hitpoints": 1650,
+      "buildCostGold": 20500000,
+      "buildTime": "15d",
+      "expGained": 1138,
+      "thRequired": 17
+    }
   ],
   "superchargeLevels": [
-    { "level": 1, "damagePerSecond": 185, "damagePerShot": 111, "hitpoints": 1650, "buildCostGold": 10000000, "buildTime": "4d",   "expGained": 587, "thRequired": 17 },
-    { "level": 2, "damagePerSecond": 185, "damagePerShot": 111, "hitpoints": 1700, "buildCostGold": 6000000,  "buildTime": "6d",   "expGained": 720, "thRequired": 17 }
+    {
+      "level": 1,
+      "damagePerSecond": 185,
+      "damagePerShot": 111,
+      "hitpoints": 1650,
+      "buildCostGold": 10000000,
+      "buildTime": "4d",
+      "expGained": 587,
+      "thRequired": 17
+    },
+    {
+      "level": 2,
+      "damagePerSecond": 185,
+      "damagePerShot": 111,
+      "hitpoints": 1700,
+      "buildCostGold": 6000000,
+      "buildTime": "6d",
+      "expGained": 720,
+      "thRequired": 17
+    }
+  ],
+  "availabilityByTH": [
+    {
+      "th": 1,
+      "count": 0
+    },
+    {
+      "th": 2,
+      "count": 0
+    },
+    {
+      "th": 3,
+      "count": 0
+    },
+    {
+      "th": 4,
+      "count": 0
+    },
+    {
+      "th": 5,
+      "count": 0
+    },
+    {
+      "th": 6,
+      "count": 0
+    },
+    {
+      "th": 7,
+      "count": 2
+    },
+    {
+      "th": 8,
+      "count": 3
+    },
+    {
+      "th": 9,
+      "count": 4
+    },
+    {
+      "th": 10,
+      "count": 4
+    },
+    {
+      "th": 11,
+      "count": 4
+    },
+    {
+      "th": 12,
+      "count": 4
+    },
+    {
+      "th": 13,
+      "count": 4
+    },
+    {
+      "th": 14,
+      "count": 4
+    },
+    {
+      "th": 15,
+      "count": 4
+    },
+    {
+      "th": 16,
+      "count": 4
+    },
+    {
+      "th": 17,
+      "count": 4
+    }
   ]
 }

@@ -2,32 +2,273 @@
   "version": 1,
   "schema": "mortar@1",
   "levels": [
-    { "level": 1,  "damagePerSecond": 4,  "damagePerShot": 20,  "hitpoints": 400,  "buildCostGold": 5000,    "buildTime": "30m",   "expGained": 42,  "thRequired": 3  },
-    { "level": 2,  "damagePerSecond": 5,  "damagePerShot": 25,  "hitpoints": 450,  "buildCostGold": 25000,   "buildTime": "1h",    "expGained": 60,  "thRequired": 4  },
-    { "level": 3,  "damagePerSecond": 6,  "damagePerShot": 30,  "hitpoints": 500,  "buildCostGold": 90000,   "buildTime": "2h",    "expGained": 84,  "thRequired": 5  },
-    { "level": 4,  "damagePerSecond": 7,  "damagePerShot": 35,  "hitpoints": 550,  "buildCostGold": 180000,  "buildTime": "3h",    "expGained": 103, "thRequired": 6  },
-    { "level": 5,  "damagePerSecond": 9,  "damagePerShot": 45,  "hitpoints": 600,  "buildCostGold": 300000,  "buildTime": "6h",    "expGained": 146, "thRequired": 7  },
-    { "level": 6,  "damagePerSecond": 11, "damagePerShot": 55,  "hitpoints": 650,  "buildCostGold": 500000,  "buildTime": "8h",    "expGained": 169, "thRequired": 8  },
-    { "level": 7,  "damagePerSecond": 15, "damagePerShot": 75,  "hitpoints": 700,  "buildCostGold": 900000,  "buildTime": "12h",   "expGained": 207, "thRequired": 9  },
-    { "level": 8,  "damagePerSecond": 20, "damagePerShot": 100, "hitpoints": 800,  "buildCostGold": 1200000, "buildTime": "18h",   "expGained": 254, "thRequired": 10 },
-    { "level": 9,  "damagePerSecond": 25, "damagePerShot": 125, "hitpoints": 950,  "buildCostGold": 1600000, "buildTime": "20h",   "expGained": 268, "thRequired": 11 },
-    { "level": 10, "damagePerSecond": 30, "damagePerShot": 150, "hitpoints": 1100, "buildCostGold": 1800000, "buildTime": "1d",    "expGained": 293, "thRequired": 11 },
-    { "level": 11, "damagePerSecond": 35, "damagePerShot": 175, "hitpoints": 1300, "buildCostGold": 2300000, "buildTime": "1d 6h", "expGained": 328, "thRequired": 12 },
-    { "level": 12, "damagePerSecond": 38, "damagePerShot": 190, "hitpoints": 1500, "buildCostGold": 2400000, "buildTime": "1d 12h","expGained": 360, "thRequired": 12 },
-    { "level": 13, "damagePerSecond": 42, "damagePerShot": 210, "hitpoints": 1700, "buildCostGold": 2800000, "buildTime": "2d",    "expGained": 415, "thRequired": 13 },
-    { "level": 14, "damagePerSecond": 48, "damagePerShot": 240, "hitpoints": 1950, "buildCostGold": 4300000, "buildTime": "2d 12h","expGained": 464, "thRequired": 14 },
-    { "level": 15, "damagePerSecond": 54, "damagePerShot": 270, "hitpoints": 2150, "buildCostGold": 5000000, "buildTime": "3d 12h","expGained": 549, "thRequired": 15 },
-    { "level": 16, "damagePerSecond": 60, "damagePerShot": 300, "hitpoints": 2300, "buildCostGold": 7000000, "buildTime": "5d",    "expGained": 657, "thRequired": 16 },
-    { "level": 17, "damagePerSecond": 66, "damagePerShot": 330, "hitpoints": 2450, "buildCostGold": 19500000,"buildTime": "14d 12h","expGained": 1119,"thRequired": 17 }
+    {
+      "level": 1,
+      "damagePerSecond": 4,
+      "damagePerShot": 20,
+      "hitpoints": 400,
+      "buildCostGold": 5000,
+      "buildTime": "30m",
+      "expGained": 42,
+      "thRequired": 3
+    },
+    {
+      "level": 2,
+      "damagePerSecond": 5,
+      "damagePerShot": 25,
+      "hitpoints": 450,
+      "buildCostGold": 25000,
+      "buildTime": "1h",
+      "expGained": 60,
+      "thRequired": 4
+    },
+    {
+      "level": 3,
+      "damagePerSecond": 6,
+      "damagePerShot": 30,
+      "hitpoints": 500,
+      "buildCostGold": 90000,
+      "buildTime": "2h",
+      "expGained": 84,
+      "thRequired": 5
+    },
+    {
+      "level": 4,
+      "damagePerSecond": 7,
+      "damagePerShot": 35,
+      "hitpoints": 550,
+      "buildCostGold": 180000,
+      "buildTime": "3h",
+      "expGained": 103,
+      "thRequired": 6
+    },
+    {
+      "level": 5,
+      "damagePerSecond": 9,
+      "damagePerShot": 45,
+      "hitpoints": 600,
+      "buildCostGold": 300000,
+      "buildTime": "6h",
+      "expGained": 146,
+      "thRequired": 7
+    },
+    {
+      "level": 6,
+      "damagePerSecond": 11,
+      "damagePerShot": 55,
+      "hitpoints": 650,
+      "buildCostGold": 500000,
+      "buildTime": "8h",
+      "expGained": 169,
+      "thRequired": 8
+    },
+    {
+      "level": 7,
+      "damagePerSecond": 15,
+      "damagePerShot": 75,
+      "hitpoints": 700,
+      "buildCostGold": 900000,
+      "buildTime": "12h",
+      "expGained": 207,
+      "thRequired": 9
+    },
+    {
+      "level": 8,
+      "damagePerSecond": 20,
+      "damagePerShot": 100,
+      "hitpoints": 800,
+      "buildCostGold": 1200000,
+      "buildTime": "18h",
+      "expGained": 254,
+      "thRequired": 10
+    },
+    {
+      "level": 9,
+      "damagePerSecond": 25,
+      "damagePerShot": 125,
+      "hitpoints": 950,
+      "buildCostGold": 1600000,
+      "buildTime": "20h",
+      "expGained": 268,
+      "thRequired": 11
+    },
+    {
+      "level": 10,
+      "damagePerSecond": 30,
+      "damagePerShot": 150,
+      "hitpoints": 1100,
+      "buildCostGold": 1800000,
+      "buildTime": "1d",
+      "expGained": 293,
+      "thRequired": 11
+    },
+    {
+      "level": 11,
+      "damagePerSecond": 35,
+      "damagePerShot": 175,
+      "hitpoints": 1300,
+      "buildCostGold": 2300000,
+      "buildTime": "1d 6h",
+      "expGained": 328,
+      "thRequired": 12
+    },
+    {
+      "level": 12,
+      "damagePerSecond": 38,
+      "damagePerShot": 190,
+      "hitpoints": 1500,
+      "buildCostGold": 2400000,
+      "buildTime": "1d 12h",
+      "expGained": 360,
+      "thRequired": 12
+    },
+    {
+      "level": 13,
+      "damagePerSecond": 42,
+      "damagePerShot": 210,
+      "hitpoints": 1700,
+      "buildCostGold": 2800000,
+      "buildTime": "2d",
+      "expGained": 415,
+      "thRequired": 13
+    },
+    {
+      "level": 14,
+      "damagePerSecond": 48,
+      "damagePerShot": 240,
+      "hitpoints": 1950,
+      "buildCostGold": 4300000,
+      "buildTime": "2d 12h",
+      "expGained": 464,
+      "thRequired": 14
+    },
+    {
+      "level": 15,
+      "damagePerSecond": 54,
+      "damagePerShot": 270,
+      "hitpoints": 2150,
+      "buildCostGold": 5000000,
+      "buildTime": "3d 12h",
+      "expGained": 549,
+      "thRequired": 15
+    },
+    {
+      "level": 16,
+      "damagePerSecond": 60,
+      "damagePerShot": 300,
+      "hitpoints": 2300,
+      "buildCostGold": 7000000,
+      "buildTime": "5d",
+      "expGained": 657,
+      "thRequired": 16
+    },
+    {
+      "level": 17,
+      "damagePerSecond": 66,
+      "damagePerShot": 330,
+      "hitpoints": 2450,
+      "buildCostGold": 19500000,
+      "buildTime": "14d 12h",
+      "expGained": 1119,
+      "thRequired": 17
+    }
   ],
   "superchargeLevels": [
-    { "level": 1, "damagePerSecond": 69, "damagePerShot": 345, "hitpoints": 2450, "buildCostGold": 7500000, "buildTime": "3d 12h", "expGained": 549, "thRequired": 17 },
-    { "level": 2, "damagePerSecond": 69, "damagePerShot": 345, "hitpoints": 2525, "buildCostGold": 5000000, "buildTime": "5d 12h", "expGained": 689, "thRequired": 17 }
+    {
+      "level": 1,
+      "damagePerSecond": 69,
+      "damagePerShot": 345,
+      "hitpoints": 2450,
+      "buildCostGold": 7500000,
+      "buildTime": "3d 12h",
+      "expGained": 549,
+      "thRequired": 17
+    },
+    {
+      "level": 2,
+      "damagePerSecond": 69,
+      "damagePerShot": 345,
+      "hitpoints": 2525,
+      "buildCostGold": 5000000,
+      "buildTime": "5d 12h",
+      "expGained": 689,
+      "thRequired": 17
+    }
   ],
   "gearUp": {
     "gearUpCostGold": 8000000,
     "gearUpTime": "14d",
     "homeMortarLevelRequired": 8,
     "multiMortarLevelRequired": 8
-  }
+  },
+  "availabilityByTH": [
+    {
+      "th": 1,
+      "count": 0
+    },
+    {
+      "th": 2,
+      "count": 0
+    },
+    {
+      "th": 3,
+      "count": 1
+    },
+    {
+      "th": 4,
+      "count": 1
+    },
+    {
+      "th": 5,
+      "count": 1
+    },
+    {
+      "th": 6,
+      "count": 2
+    },
+    {
+      "th": 7,
+      "count": 3
+    },
+    {
+      "th": 8,
+      "count": 4
+    },
+    {
+      "th": 9,
+      "count": 4
+    },
+    {
+      "th": 10,
+      "count": 4
+    },
+    {
+      "th": 11,
+      "count": 4
+    },
+    {
+      "th": 12,
+      "count": 4
+    },
+    {
+      "th": 13,
+      "count": 4
+    },
+    {
+      "th": 14,
+      "count": 4
+    },
+    {
+      "th": 15,
+      "count": 4
+    },
+    {
+      "th": 16,
+      "count": 4
+    },
+    {
+      "th": 17,
+      "count": 4
+    }
+  ]
 }

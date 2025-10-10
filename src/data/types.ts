@@ -3,6 +3,13 @@
 /** Generic duration string like "7d12h", "2h30m", "45m", "10s" */
 export type DurationString = string;
 
+/* ---------- Generic interface for TH Availability ---------- */
+export interface AvailabilityByTH {
+  th: number;
+  count: number;
+}
+
+
 /* ---------- Town Hall ---------- */
 export interface TownHallRow {
   th: number;                      // 1..17
@@ -102,6 +109,7 @@ export interface ResourceCollectorsFile {
   appliesTo: ResourceKind[];      // ["gold","elixir"]
   levels: CollectorLevelRow[];    // base building levels
   superchargeLevels: CollectorSuperchargeRow[]; // optional: TH16+
+  availabilityByTH?: AvailabilityByTH[];
 }
 
 /* ---------- Resource Storages (Gold / Elixir) ---------- */
@@ -122,6 +130,7 @@ export interface ResourceStoragesFile {
   schema: string;              // "resource_storages@1"
   appliesTo: StorageKind[];    // ["gold","elixir"]
   levels: ResourceStorageLevelRow[];
+  availabilityByTH?: AvailabilityByTH[];
 }
 
 /* ---------- Army Camp ---------- */
@@ -139,6 +148,7 @@ export interface ArmyCampFile {
   version: number;
   schema: string;               // "army_camp@1"
   levels: ArmyCampLevelRow[];
+  availabilityByTH?: AvailabilityByTH[];
 }
 
 /* ---------- Barracks ---------- */
@@ -979,6 +989,37 @@ export type Account = {
   // (optional props we’ll use later for KPIs)
   buildersCount?: number;
   inWar?: boolean;
+  sixthBuilderUnlocked?: boolean
 };
 
 export type SortMode = 'created' | 'alpha';
+
+export type StructureCategory = "army" | "resources" | "defenses" | "traps" | "others";
+
+export interface StructureDef {
+  id: string;                      // "barracks", "archer_tower", ...
+  label: string;                   // "Barracks"
+  thMin: number;
+  thMax: number;
+
+  /** NEW: canonical category we’ll show in UI */
+  category?: StructureCategory;
+
+  /** Optional hints to infer a category (from your folder path or schema name) */
+  pathHint?: string;               // e.g., "army/barracks", "defenses/archer_tower"
+  schemaHint?: string;             // e.g., "barracks@1", "archer_tower@1"
+
+  /** Duration info (unchanged) */
+  defaultDuration?: DurationString;
+  byTownHall?: Record<string, DurationString>; // key = TH as string
+}
+
+export interface StructuresFile {
+  version: number;
+  schema?: string;                 // e.g., "structures@1"
+  durationFormat?: string;
+  structures: StructureDef[];
+}
+
+/** Handy grouped shape for UI rendering */
+export type CategoryGroups = Record<StructureCategory, StructureDef[]>;

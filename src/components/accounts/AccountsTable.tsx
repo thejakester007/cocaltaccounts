@@ -4,6 +4,7 @@ import React from 'react';
 import type { Account } from '@/data/types';
 import InlineEditableNumber from '@/app/components/inline-editable-number';
 import { InlineEditableText } from './InlineEditableText';
+import Link from 'next/link';
 
 type Props = {
   list: Account[];
@@ -52,47 +53,70 @@ const AccountsTable: React.FC<Props> = ({
             return (
               <tr key={acc.id} className="hover:bg-white/5">
                 {/* Account label + move */}
-                <td className="px-3 py-3 align-top">
-                  <div className="flex items-start gap-2">
-                    {/* compact move buttons */}
-                    <div className="flex flex-col gap-1 pt-0.5">
+                <td className="sticky left-0 z-10 bg-black/20 px-4 py-3 align-middle backdrop-blur">
+                  <div className="flex min-w-0 items-center gap-2">
+                    {/* side-by-side move buttons with fixed width for consistent layout */}
+                    <div className="flex w-11 shrink-0 items-center justify-between">
                       <button
                         onClick={() => move(acc.id, 'up')}
                         disabled={idx === 0}
                         title="Move up"
                         aria-label="Move up"
-                        className="inline-flex h-4 w-4 items-center justify-center rounded-md border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 active:translate-y-px disabled:opacity-40"
+                        className="inline-flex h-8 w-5 items-center justify-center rounded-md border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 active:translate-y-px disabled:opacity-40"
                       >
-                        <svg viewBox="0 0 20 20" className="h-3 w-3" fill="currentColor" aria-hidden="true">
-                          <path d="M10 6l4 5H6l4-5z" />
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="block h-4 w-4 rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          {/* down arrow w/ tail (rotated for up) */}
+                          <path d="M12 6v12" />
+                          <path d="M8.5 13.5L12 17l3.5-3.5" />
                         </svg>
                       </button>
+
                       <button
                         onClick={() => move(acc.id, 'down')}
                         disabled={idx === list.length - 1}
                         title="Move down"
                         aria-label="Move down"
-                        className="inline-flex h-4 w-4 items-center justify-center rounded-md border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 active:translate-y-px disabled:opacity-40"
+                        className="inline-flex h-8 w-5 items-center justify-center rounded-md border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 active:translate-y-px disabled:opacity-40"
                       >
-                        <svg viewBox="0 0 20 20" className="h-3 w-3" fill="currentColor" aria-hidden="true">
-                          <path d="M10 14l-4-5h8l-4 5z" />
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="block h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          {/* down arrow w/ tail (rotated for up) */}
+                          <path d="M12 6v12" />
+                          <path d="M8.5 13.5L12 17l3.5-3.5" />
                         </svg>
                       </button>
                     </div>
 
-                    <div className="group relative min-w-0" title={acc.notes || undefined}>
-                      <InlineEditableText
-                        value={acc.label}
-                        onChange={(val) => renameAccount(acc.id, val)}
-                        placeholder="Account label"
-                        strong
-                      />
-                    </div>
+                    {/* label (linked) */}
+                    <Link
+                      href={`/accounts/${acc.id}`}
+                      className="group relative min-w-0 max-w-[28ch] truncate text-white/90 leading-none hover:underline"
+                      title={acc.notes || acc.label}
+                    >
+                      {acc.label}
+                    </Link>
                   </div>
                 </td>
 
                 {/* TH level */}
-                <td className="px-3 py-3 text-center align-top">
+                <td className="px-3 py-3 text-center align-middle">
                   <InlineEditableNumber
                     value={acc.level ?? ''}
                     onChange={(v) => {
@@ -108,7 +132,7 @@ const AccountsTable: React.FC<Props> = ({
                 </td>
 
                 {/* Upgrade */}
-                <td className="min-w-[260px] px-3 py-3 text-center align-top">
+                <td className="min-w-[260px] px-3 py-3 text-center align-middle">
                   {up ? (
                     <>
                       <div className="font-semibold">{up.name}</div>
@@ -122,7 +146,7 @@ const AccountsTable: React.FC<Props> = ({
                 </td>
 
                 {/* Actions */}
-                <td className="whitespace-nowrap px-3 py-3 text-center align-top">
+                <td className="whitespace-nowrap px-3 py-3 text-center align-middle">
                   <button
                     onClick={() => setNewUpgrade(acc.id)}
                     className="mr-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white/90 transition hover:bg-white/10"
