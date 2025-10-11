@@ -1,153 +1,75 @@
 "use client"
 
 import React from "react";
-import { formatMsShort } from "@/lib/duration";
-import { renderAvailability, Card, KV, Tag } from "@/components/accounts/AccountHelpers";
-import { useTHCategories } from "@/lib/hooks/useTHCategories";
+import TownHallDetailsCard from "./TownHallDetailsCard";
+import TownHallStructures from "./TownHallStructures";
 
-import type { TownHallRow } from "@/data/types";
-import StructureEditor from "./StructureEditor";
+import type { Account, TownHallRow } from "@/data/types";
+import type { StructureAvailability } from "@/lib/categories";
+
+import { useTHCategories } from "@/lib/hooks/useTHCategories";
+import { getTHWeapon, Card } from "./AccountHelpers";
 
 interface TownHallOverviewSectionProps {
-  accountLevel?: number;
-  townHallDetails: TownHallRow | null | undefined;
-  nextTownHallDetails: TownHallRow | null | undefined;
-  durationMs: number;
+  account: Account;
+  townHallDetails: TownHallRow | null;
+  builderHutsAtTH?: number; // NEW: pass how many builder huts exist at this TH (default 0)
   children?: React.ReactNode;
 };
 
 const TownHallOverviewSection = ({
-  accountLevel,
+  account,
   townHallDetails,
-  nextTownHallDetails,
-  durationMs,
-  children,
+  builderHutsAtTH
 }: TownHallOverviewSectionProps) => {
-  const nextLevel = (accountLevel ?? 0) + 1;
+  if (!townHallDetails) return null;
+
+  const nextLevel = (account?.level ?? 0) + 1;
 
   // useMemo only for the derived input
   const thForCategories = React.useMemo<number | null>(
-    () => townHallDetails?.th ?? accountLevel ?? null,
-    [townHallDetails?.th, accountLevel]
+    () => townHallDetails?.th ?? account?.level ?? null,
+    [townHallDetails?.th, account?.level]
   );
 
   const categories = useTHCategories(thForCategories);
 
+  if (!categories) {
+    return null;
+  }
+
+  const sumCategory = (arr?: StructureAvailability[]) =>
+    (arr ?? []).reduce((acc, it) => acc + (it.available ? (it.countMaxAtTH ?? 0) : 0), 0);
+
+  const army = (categories?.army ?? []).reduce((s, i) => s + (i.available ? (i.countMaxAtTH ?? 0) : 0), 0);
+  const resources = (categories?.resources ?? []).reduce((s, i) => s + (i.available ? (i.countMaxAtTH ?? 0) : 0), 0);
+  const defenses = (categories?.defenses ?? []).reduce((s, i) => s + (i.available ? (i.countMaxAtTH ?? 0) : 0), 0);
+  const traps = Math.max(0, townHallDetails?.maxTraps ?? 0);
+
+  const nonEmpty = [army, resources, defenses, traps]
+    .filter(v => v > 0).length;
+
   return (
-    <section className="space-y-2 lg:col-span-4">
-      {/* Current TH */}
-      <Card title={`Town Hall ${accountLevel ?? "—"}`}>
-        <div className="grid gap-2 text-sm">
-          <KV label="Hitpoints" value={townHallDetails?.hitpoints ?? "—"} />
-          <KV label="Max Buildings" value={townHallDetails?.maxBuildings ?? "—"} />
-          <KV label="Max Traps" value={townHallDetails?.maxTraps ?? "—"} />
-        </div>
-      </Card>
-      <div className="grid gap-6 xl:gap-8 sm:grid-cols-1 md:grid-cols-1 xl:grid-cols-4">
-        {categories && categories.army.length > 0 && (
-          <div className="min-w-0">
-            <div>
-              <div className="mt-6 text-md font-bold uppercase tracking-wide text-white/60">
-                Army Structures
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="mt-4 grid gap-4">
-                {/* Editors for all Army structures */}
-                {categories.army.map((s) => (
-                  <StructureEditor
-                    key={s.id}
-                    structureId={s.id}
-                    structureName={s.label}
-                    maxLevelAtTH={s.maxLevelAtTH}
-                    countMaxAtTH={s.countMaxAtTH}
-                  // initialBuiltCount / initialLevels can be injected when you wire persistence
-                  // onChange={(state) => dispatch(updateStructure({ accountId, ...state }))}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-
-        {categories && categories.traps.length > 0 && (
-          <div className="min-w-0">
-            <div>
-              <div className="mt-6 text-md font-bold uppercase tracking-wide text-white/60">
-                Traps
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="mt-4 grid gap-4">
-                {/* Editors for all Army structures */}
-                {categories.traps.map((s) => (
-                  <StructureEditor
-                    key={s.id}
-                    structureId={s.id}
-                    structureName={s.label}
-                    maxLevelAtTH={s.maxLevelAtTH}
-                    countMaxAtTH={s.countMaxAtTH}
-                  // initialBuiltCount / initialLevels can be injected when you wire persistence
-                  // onChange={(state) => dispatch(updateStructure({ accountId, ...state }))}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-        {categories && categories.resources.length > 0 && (
-          <div className="min-w-0">
-            <div>
-              <div className="mt-6 text-md font-bold uppercase tracking-wide text-white/60">
-                Resource Structures
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="mt-4 grid gap-4">
-                {/* Editors for all Army structures */}
-                {categories.resources.map((s) => (
-                  <StructureEditor
-                    key={s.id}
-                    structureId={s.id}
-                    structureName={s.label}
-                    maxLevelAtTH={s.maxLevelAtTH}
-                    countMaxAtTH={s.countMaxAtTH}
-                  // initialBuiltCount / initialLevels can be injected when you wire persistence
-                  // onChange={(state) => dispatch(updateStructure({ accountId, ...state }))}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-        {categories && categories.defenses.length > 0 && (
-          <div className="min-w-0">
-            <div>
-              <div className="mt-6 text-md font-bold uppercase tracking-wide text-white/60">
-                Defensive Structures
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="mt-4 grid gap-4">
-                {/* Editors for all Army structures */}
-                {categories.defenses.map((s) => (
-                  <StructureEditor
-                    key={s.id}
-                    structureId={s.id}
-                    structureName={s.label}
-                    maxLevelAtTH={s.maxLevelAtTH}
-                    countMaxAtTH={s.countMaxAtTH}
-                  // initialBuiltCount / initialLevels can be injected when you wire persistence
-                  // onChange={(state) => dispatch(updateStructure({ accountId, ...state }))}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </section >
+    <section className="space-y-2 lg:col-span-3 md:col-span-2">
+      <TownHallDetailsCard
+        account={account}
+        townHallDetails={townHallDetails}
+        army={army}
+        resources={resources}
+        defenses={defenses}
+        traps={traps}
+      />
+      <TownHallStructures
+        account={account}
+        townHallDetails={townHallDetails}
+        categories={categories}
+        army={army}
+        resources={resources}
+        defenses={defenses}
+        traps={traps}
+        nonEmpty={nonEmpty}
+      />
+    </section>
   )
 };
 

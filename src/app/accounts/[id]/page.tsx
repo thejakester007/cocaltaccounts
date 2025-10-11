@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { RootState } from "@/store";
-import Link from "next/link";
+import { notFound } from "next/navigation";
 import { useSelector } from "react-redux";
 import { TownHallRow } from "@/data/types";
 import { getTownHallRow } from "@/lib/resources/townHall";
-import { parseDurationToMs, formatMsShort } from "@/lib/duration";
+import { parseDurationToMs } from "@/lib/duration";
+import Link from "next/link";
 import Spinner from "@/components/common/Spinner";
-import { Stat, Card, KV } from "@/components/accounts/AccountHelpers";
 import TownHallOverviewSection from "@/components/accounts/TownHallOverviewSection";
 import AccountContextCards from "@/components/accounts/AccountContextCards";
 
@@ -18,12 +18,14 @@ const AccountDetailsPage = ({ params }: { params: Promise<Params> }) => {
   const { id } = React.use(params);
   const account = useSelector((s: RootState) => s.accounts.list.find(i => i.id === id));
 
+  if (!account) notFound();
+
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [townHallDetails, setTownHallDetails] = useState<TownHallRow | null>(null);
   const [nextTownHallDetails, setNextTownHallDetails] = useState<TownHallRow | null>(null);
 
-  const [{ current, next }, setTH] = useState<{
+  const [{ current, next },] = useState<{
     current: TownHallRow | null;
     next: TownHallRow | null;
   }>({ current: null, next: null });
@@ -51,7 +53,11 @@ const AccountDetailsPage = ({ params }: { params: Promise<Params> }) => {
           setNextTownHallDetails(nxt ?? null);
         }
       } catch (e: any) {
-        if (!cancelled) setError(e?.message ?? "Failed to load Town Hall data.");
+        if (!cancelled) {
+          setError(e?.message ?? "Failed to load Town Hall data.");
+          setLoading(true);
+          console.log('error', e)
+        }
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -60,12 +66,14 @@ const AccountDetailsPage = ({ params }: { params: Promise<Params> }) => {
     return () => {
       cancelled = true;
     };
-  }, [account?.level]);
+  }, [account.level]);
 
   const durationToMs = useMemo(
     () => (nextTownHallDetails ? parseDurationToMs(nextTownHallDetails.buildTime) ?? 0 : 0),
     [nextTownHallDetails]
   );
+
+  if (!account || !townHallDetails || !nextTownHallDetails) return null;
 
   return loading ? (
     <Spinner label="Fetching…" />
@@ -74,7 +82,7 @@ const AccountDetailsPage = ({ params }: { params: Promise<Params> }) => {
     <main className="px-5 pb-10 pt-5 space-y-4">
       <header className="mb-6 flex items-center gap-3">
         <h1 className="text-[1.6rem] font-semibold">
-          Account: <i>{account?.label}</i>
+          Account: <i>{account.label}</i>
         </h1>
         <span className="ml-auto">
           <Link href="/accounts" className="text-sm text-emerald-400 hover:underline">
@@ -82,20 +90,10 @@ const AccountDetailsPage = ({ params }: { params: Promise<Params> }) => {
           </Link>
         </span>
       </header>
-
-      {/* Summary strip */}
-      <section className="mb-6 grid gap-3 sm:grid-cols-1 lg:grid-cols-3">
-        <Stat label="Current TH" value={`TH ${account?.level}`} />
-        <Stat label={`To TH ${nextTownHallDetails?.th}`} value={formatMsShort(durationToMs)} />
-        <Stat label="Cost (Gold)" value={nextTownHallDetails?.buildCostGold?.toLocaleString() ?? "—"} />
-      </section>
-
-      <div className="grid gap-6 lg:grid-cols-5 sm:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-4 md:grid-cols-3">
         <TownHallOverviewSection
-          accountLevel={account?.level}
+          account={account}
           townHallDetails={townHallDetails}
-          nextTownHallDetails={nextTownHallDetails}
-          durationMs={durationToMs || 0}
         />
         <aside className="lg:sticky lg:top-6 self-start space-y-6">
           <AccountContextCards

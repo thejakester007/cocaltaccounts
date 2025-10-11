@@ -13,12 +13,14 @@ import storage from "./persistStorage";
 //#region Imports
 // add Imports here!!!
 import { accountsReducer } from "./accountStore";
+import { structuresReducer } from "./structuresStore";
 //#endregion
 
 //#region Reducers
 // --- root reducer (easy to add more slices later) ---
 const rootReducer = combineReducers({
   accounts: accountsReducer,
+  structures: structuresReducer
 });
 //#endregion
 
@@ -26,7 +28,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: "coc-upgrade-tracker",
   storage,
-  whitelist: ["accounts"], // add other slice keys later
+  whitelist: ["accounts", "structures"], // add other slice keys later
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

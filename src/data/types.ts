@@ -9,7 +9,6 @@ export interface AvailabilityByTH {
   count: number;
 }
 
-
 /* ---------- Town Hall ---------- */
 export interface TownHallRow {
   th: number;                      // 1..17
@@ -989,7 +988,10 @@ export type Account = {
   // (optional props we’ll use later for KPIs)
   buildersCount?: number;
   inWar?: boolean;
-  sixthBuilderUnlocked?: boolean
+  sixthBuilderUnlocked?: boolean;
+  gold?: number;
+  elixir?: number;
+  darkElixir?: number;
 };
 
 export type SortMode = 'created' | 'alpha';
@@ -1023,3 +1025,14 @@ export interface StructuresFile {
 
 /** Handy grouped shape for UI rendering */
 export type CategoryGroups = Record<StructureCategory, StructureDef[]>;
+
+export type THWeapon = { name: string; autoUnlocked: true; upgradable: false };
+
+export const TH_WEAPON_BY_LEVEL: Record<number, THWeapon | undefined> = {
+  12: { name: "Giga Tesla", autoUnlocked: true, upgradable: false },
+  13: { name: "Giga Inferno", autoUnlocked: true, upgradable: false },
+  14: { name: "Giga Inferno", autoUnlocked: true, upgradable: false },
+  15: { name: "Giga Inferno", autoUnlocked: true, upgradable: false },
+  16: { name: "Giga Inferno", autoUnlocked: true, upgradable: false },
+  17: { name: "Giga Bomb", autoUnlocked: true, upgradable: false }, // on-death effect
+};

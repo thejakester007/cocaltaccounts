@@ -1,23 +1,24 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Card, KV } from "./AccountHelpers";
-
-import type { Account, TownHallRow } from "@/data/types";
-
+import { setResources, setBuildersCount, setSixthBuilderUnlocked } from "@/store/accountStore";
 import { formatMsShort } from "@/lib/duration";
 import { Tag } from "./AccountHelpers";
+import { getResourceCaps, clampToCaps, getDarkStorageLevel } from "@/lib/resources/capacity";
 
 import BuildersPicker from "@/components/accounts/BuildersPicker";
+import ResourceChip from "./ResourceChip";
+import ResourceInput from "./ResourceInput";
+
+import type { Account, TownHallRow, ResourceKind } from "@/data/types";
 
 interface AccountContextCardProps {
-  account: Account | undefined;
-  nextTownHallDetails: TownHallRow | null | undefined;
+  account: Account;
+  nextTownHallDetails: TownHallRow;
   durationMs: number;
   onPlanUpgrade?: () => void;
   children?: React.ReactNode;
 };
-
 
 const AccountContextCards = ({
   account,
@@ -26,25 +27,50 @@ const AccountContextCards = ({
   onPlanUpgrade,
   children,
 }: AccountContextCardProps) => {
+  const dispatch = useDispatch();
   const [editableNote, setEditableNote] = useState<Boolean>(false);
+  const [editResource, setEditResource] = useState<Boolean>(false);
+  const [caps, setCaps] = useState<{ goldMax: number; elixirMax: number; darkMax: number }>({
+    goldMax: 0, elixirMax: 0, darkMax: 0
+  });
 
   const handleUpdateNote = () => {
-    console.log('note handler')
+    console.log('TODO: handleUpdateNote')
   };
+
+  const handleUpdateResource = (key: ResourceKind, value: number) => {
+    if (!account) return;
+    const clamped = clampToCaps(value, key, caps);
+    dispatch(setResources({ id: account.id, [key]: clamped }));
+  };
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      const next = await getResourceCaps({
+        th: account?.level,
+        // pass real levels when you track them; until then, omit/empty arrays to use TH base only
+        goldStorageLvls: [],
+        elixirStorageLvls: [],
+        darkStorageLvl: getDarkStorageLevel(account),
+      });
+      if (alive) setCaps(next);
+    })();
+    return () => { alive = false; };
+  }, [account?.level]);
 
   return (
     <>
       <Card title="Account Context">
         <div className="grid gap-2 text-sm">
           <BuildersPicker
-            value={account?.buildersCount ?? 2}
+            value={Number(account.buildersCount ?? 2)}
             sixthUnlocked={!!account?.sixthBuilderUnlocked}
             onChange={(n) => {
-              // persist both fields in your store
-              // dispatch(updateAccount({ id: account.id, buildersCount: n }))
+              account && dispatch(setBuildersCount({ id: account.id, value: n }));
             }}
             onChangeSixth={(u) => {
-              // dispatch(updateAccount({ id: account.id, sixthBuilderUnlocked: u }))
+              account && dispatch(setSixthBuilderUnlocked({ id: account.id, value: u }))
             }}
           />
           <div>
@@ -97,6 +123,45 @@ const AccountContextCards = ({
                 {account?.notes && account?.notes.trim().length ? account?.notes : (
                   <span className="text-white/40">{account?.notes}</span>
                 )}
+              </div>
+            )}
+          </div>
+          {/* Resources row */}
+          <div className="py-1">
+            <div className="mb-1 flex items-center justify-between gap-3">
+              <div className="text-white/60">Resources</div>
+              {/* Optional: last sync */}
+              {/* <div className="text-xs text-white/40">Updated 3h ago</div> */}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              {!editResource && (
+                <React.Fragment>
+                  <ResourceChip label="Gold" value={account?.gold ?? 0} />
+                  <ResourceChip label="Elixir" value={account?.elixir ?? 0} />
+                  <ResourceChip label="Dark" value={account?.darkElixir ?? 0} />
+                  <button
+                    onClick={() => setEditResource(true)}
+                    className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs hover:bg-white/10"
+                  >
+                    Update Resources
+                  </button>
+                </React.Fragment>
+              )}
+            </div>
+            {editResource && (
+              <div className="flex flex-col gap-4">
+                <ResourceInput label="Gold" value={account?.gold ?? 0} onChange={(n) => handleUpdateResource("gold", n)} />
+                <ResourceInput label="Elixir" value={account?.elixir ?? 0} onChange={(n) => handleUpdateResource("elixir", n)} />
+                <ResourceInput label="Dark" value={account?.darkElixir ?? 0} onChange={(n) => handleUpdateResource("dark_elixir", n)} />
+                <div>
+                  <button
+                    onClick={() => setEditResource(false)}
+                    className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs hover:bg-white/10"
+                  >
+                    Save
+                  </button>
+                </div>
               </div>
             )}
           </div>

@@ -1,21 +1,14 @@
 // src/components/accounts/AccountHelpers.tsx
+import { TH_WEAPON_BY_LEVEL } from "@/data/types";
+
 import type { StructureAvailability } from "@/lib/categories";
 
 export const Card = ({ title, children }: { title: string; children: React.ReactNode }) => {
   return (
     <section className="rounded-2xl border border-white/10 p-4">
-      <div className="mb-2 text-lg font-semibold">{title}</div>
+      <div className="mb-6 text-lg font-semibold">{title}</div>
       {children}
     </section>
-  );
-};
-
-export const Stat = ({ label, value }: { label: string; value: React.ReactNode }) => {
-  return (
-    <div className="rounded-2xl border border-white/10 p-3">
-      <div className="text-xs text-white/60">{label}</div>
-      <div className="mt-1 text-base font-semibold">{value}</div>
-    </div>
   );
 };
 
@@ -94,3 +87,18 @@ export const formatDuration = (ms: number) => {
   if (m > 0) return `${m}m ${sec}s`;
   return `${sec}s`;
 };
+
+export const toReadable = (v?: number | null) => {
+  if (v === null || v === undefined) return "—";
+  return formatCompactNumber(v);
+};
+
+export const formatCompactNumber = (n: number): string => {
+  const abs = Math.abs(n);
+  if (abs >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
+  if (abs >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  if (abs >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
+  return `${n}`;
+};
+
+export const getTHWeapon = (level: number) => TH_WEAPON_BY_LEVEL[level];

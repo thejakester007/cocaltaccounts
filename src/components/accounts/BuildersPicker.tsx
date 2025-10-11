@@ -1,26 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function BuildersPicker({
   value,
   sixthUnlocked,
   onChange,
   onChangeSixth,
-  min = 1,
+  min = 2,
 }: {
-  value: number;                         // current builders count (1..5 or 6)
-  sixthUnlocked: boolean;                // OTTO / 6th builder unlocked
-  onChange?: (n: number) => void;        // when count changes
-  onChangeSixth?: (unlocked: boolean) => void; // when checkbox toggles
-  min?: number;                          // default 1
+  value: number;
+  sixthUnlocked: boolean;
+  onChange?: (n: number) => void;
+  onChangeSixth?: (unlocked: boolean) => void;
+  min?: number;
 }) {
   const [local, setLocal] = React.useState<number>(value ?? min);
   const [unlocked, setUnlocked] = React.useState<boolean>(!!sixthUnlocked);
 
   // keep in sync with parent props
-  React.useEffect(() => setLocal(value ?? min), [value, min]);
-  React.useEffect(() => setUnlocked(!!sixthUnlocked), [sixthUnlocked]);
+  useEffect(() => setLocal(value ?? min), [value, min]);
+  useEffect(() => setUnlocked(!!sixthUnlocked), [sixthUnlocked]);
 
   const max = unlocked ? 6 : 5;
   const clamp = (n: number) => Math.min(Math.max(n, min), max);
@@ -36,9 +36,9 @@ export default function BuildersPicker({
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center justify-between gap-3 py-1">
-        <div className="text-white/60 pt-1">Builders</div>
-        <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3 py-1">
+        <div className="flex-1 min-w-0 truncate text-white/60 pt-1">Builders</div>
+        <div className="shrink-0 flex items-center gap-2">
           <button
             type="button"
             className="rounded-md border border-white/10 px-2 py-1 text-xs hover:bg-white/5"
@@ -82,12 +82,12 @@ export default function BuildersPicker({
         </div>
       </div>
 
-      <div className="flex items-start justify-between gap-3 py-1">
-        <div></div>
+      <div className="flex items-end justify-end gap-3 py-1">
         <label className="flex items-center gap-2 text-xs text-white/70">
           <input
             type="checkbox"
             checked={unlocked}
+            disabled={value < 5}
             onChange={(e) => {
               const u = e.target.checked;
               setUnlocked(u);

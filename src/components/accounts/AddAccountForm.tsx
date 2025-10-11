@@ -24,6 +24,7 @@ const AddAccountForm: React.FC<Props> = ({ onAdd }) => {
       level,
       notes: notes.trim() || undefined,
       activeUpgrade: null,
+      buildersCount: 2
     });
 
     setLabel('');
